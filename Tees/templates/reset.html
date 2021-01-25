@@ -1,0 +1,49 @@
+{% extends "log-layout.html" %}
+
+{% block title %}
+	Reset password - The Talking Tees
+{% endblock %}
+
+{% block main_body %}
+  <div class="main">
+    <h2>Reset your password</h2>
+    <form action="/reset" id="form1" method="post">
+
+      <div class="input-box">
+        <input id="re-username" type="text" name="username" autocomplete="off" required>
+        <label for="re-username">Username</label>
+      </div>
+
+      <div class="input-box">
+        <input id="re-email" type="email" name="email" autocomplete="off" required>
+        <label for="re-email">Email</label>
+      </div>
+
+      <div class="input-box">
+        <input id="re-pass" type="password" name="password"  autocomplete="off" required>
+        <label for="re-pass">New Password</label>
+      </div>
+
+      <div class="input-box">
+        <input id="re-pass-2" type="password" name="password-confirm"  autocomplete="off" required>
+        <label for="re-pass-2">Confirm Password</label>
+      </div>
+      <button type="submit" name="submit" class="btn btn-dark" id="re-snd" value="reset">Reset</button>
+    </form>
+
+    <span id="response" class="d-none text-light mt-1" style="font-size: 12px; font-family: 'Lato', sans-serif;"></span>
+
+    <div class="w-100 col-12 row m-0 p-0 mt-1">
+      <div class="col-6 m-0 p-0">
+        <div class=" text-left w-100 text-light sign-in">
+          <a href="{{ url_for('sign_in') }}">Sign in</a>
+        </div>
+      </div>
+      <div class="col-6 m-0 p-0">
+        <div class=" text-right w-100 text-light sign-in">
+          Not registered?<a href="{{ url_for('sign_up') }}"> Sign up</a>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

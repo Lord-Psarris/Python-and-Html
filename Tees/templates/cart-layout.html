@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>
+		{% block title %}
+			<!-- title -->
+		{% endblock %}
+	</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/cart.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/font-awesome.css') }}">
+</head>
+<body>
+
+<!-- navbar -->
+	<header class="fixed-top">
+		<!-- main nav -->
+			<nav id="nav-bar" class="position-relative">
+				<div class="col-12 h-100">
+					<div class="row h-100">
+
+						<div class="col-1 text-center d-flex justify-content-center">
+							<a id="toggle-nav" href="#navigation" class="fa fa-bars my-auto nav-open"></a>
+						</div>
+
+						<div class="col-7 col-sm-8 text-left d-flex justify-content-start">
+							<a href="{{ url_for('index') }}" class="my-auto logo">talking tees</a>
+						</div>
+
+						<div class="col-4 col-sm-3 row p-0 d-flex justify-content-center flex-row">
+								{% if yum == True %}
+								<div class="col-3 p-2 col-sm-4 justify-content-center d-none d-md-flex">
+									<a href="{{ url_for('sign_in') }}" class="mini-links my-auto">
+										{{ name }}
+									</a>
+								</div>
+							{% elif yum == False %}
+								<div class="col-3 p-2 col-sm-4 justify-content-center d-none d-md-flex">
+									<a href="{{ url_for('sign_in') }}" class="mini-links fa fa-user my-auto"></a>
+								</div>
+							{% endif %}
+
+                            <div class="col-3 p-2 col-sm-4 justify-content-center d-flex d-md-none">
+									<a href="{{ url_for('sign_in') }}" class="mini-links fa fa-user my-auto"></a>
+								</div>
+
+							<div class="col-3 p-2 col-sm-4 d-flex justify-content-start text-left">
+								<a href="{{ url_for('cart') }}" class="mini-links fa fa-shopping-cart my-auto"></a>
+								<label class="my-auto" id="cart">{{ cart }}</label>
+							</div>
+							<div class="col-1 p-2 col-sm-4 d-flex justify-content-center pl-3 pl-md-0">
+							</div>
+						</div>
+
+					</div>
+				</div>
+
+			<!-- navigation -->
+				<div id="navigation" class="col-8 col-md-6 position-absolute">
+
+		            <!-- nav floaters -->
+		            <div class="cart_times col-12 p-0 d-flex justify-content-between">
+		                <span class="col-6 p-1 p-md-3 p-lg-5 text-left">
+		                    <a href="/cart">
+		                        <i class="fa fa-shopping-cart">
+		                        </i>
+		                        <span id="cartss" class="my-auto">
+		                        	{{ cart }}
+		                        </span>
+		                    </a>
+		                </span>
+		                <span class="col-6 p-1 p-md-3 p-lg-5 text-right" id="toggle">
+		                    <a>
+		                        <i class="fa fa-times"></i>
+		                    </a>
+		                </span>
+		            </div>
+
+		            <div class="centered mt-5 mt-md-0 d-flex justify-content-center col-12 p-0 text-center">
+		                <span class="col-md-6 col-lg-4 d-flex flex-column text-center">
+			                <a class="py-2 py-md-4 px-md-1" href="/shop"id="shop">shop</a>
+			                <a class="py-2 py-md-4 px-md-1" href="/contact" id="contact">contact</a>
+			                <a class="py-2 py-md-4 px-md-1" href="/about" id="about">about</a>
+		                	<a class="py-2 py-md-4 px-md-1" href="{{ url_for('custom') }}" id="home">customize</a>
+		                </span>
+		            </div>
+
+		            <div class="nav-footer mt-5 mt-md-4 mt-ld-5 d-flex flex-row justify-content-center col-12 p-0 text-center pt-5 pt-md-0 pt-lg-5">
+		                <span class="col-7 col-lg-3 d-flex justify-content-between text-center">
+		                    <a href="https://wa.me/message/YWN3VSAY6NUL01" target="_blank">
+		                        <i class="fa fa-whatsapp"></i>
+		                    </a>
+		                    <a href="gmail" target="_blank">
+		                        <i class="fa fa-google"></i>
+		                    </a>
+		                    <a href="https://instagram.com/p/CFTJSlvDB7U/?igshid=1cf2od1qr969s" target="_blank">
+		                        <i class="fa fa-instagram"></i>
+		                    </a>
+		                </span>
+		            </div>
+		        </div>
+	        </nav>
+		<!-- navigation end -->
+	</header>
+<!-- navbar end -->
+
+<span id="top"></span>
+<div class="w-100 col-12 space-div"></div>
+<div class="opaque d-none"></div>
+
+	<main>
+		{% block main_body %}
+			<!-- main -->
+		{% endblock %}
+	</main>
+	<footer id="footer" class="mt-5 p-0 bg-light">
+        <div class="w-100 mt-2 mx-auto">
+
+            {% if carts == True %}
+			    <div class="row footer px-5 py-md-5 py-3 mx-auto">
+            {% elif carts == False %}
+                <div class="row footer footereer px-5 py-md-5 py-3 mx-auto">
+            {% endif %}
+		        <div class="col-sm-8 text-sm-left text-center ml-lg+-5">
+		            <a href="{{ url_for('index') }}" class="text-dark foot-a">the talking tees</a>
+		        </div>
+		        <div class="col-sm-2 justify-content-sm-end">
+		            <div class="row justify-content-sm-around justify-content-center">
+		                <a href="https://wa.me/message/YWN3VSAY6NULO1" target="_blank" class="foot-a mx-sm-1 mx-lg-2 mt-1 mt-sm-0 mx-2">
+		                    <i class="fa fa-whatsapp"></i>
+		                </a>
+		                <a href="gmail" target="_blank" class="foot-a mx-sm-1 mx-lg-2 mt-1 mt-sm-0 mx-2">
+		                    <i class="fa fa-google"></i>
+		                </a>
+		                <a href="https://instagram.com/thetalkingtees_?r=nametag" target="_blank" class="foot-a mx-sm-1 mx-lg-2 mt-1 mt-sm-0 mx-2">
+		                    <i class="fa fa-instagram"></i>
+		                </a>
+		            </div>
+		        </div>
+		        <div class="col-sm-1 ml-sm-4">
+		            <div class="text-center">
+		                <a href="#top" class="text-dark">
+		                    <i class="fa fa-chevron-up"></i>
+		                </a>
+		            </div>
+		        </div>
+		    </div>
+		</div>
+	</footer>
+
+<script src="{{ url_for('static', filename='js/jquery.js') }}"></script>
+<script src="{{ url_for('static', filename='js/popper.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/bootstrap.js') }}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script>
+    $("#big-delete, #sm-delete").on("click", function(elem) {
+        var manm = $(this).val()
+        $.post("/remove", {
+				pid:manm
+			}, function(data) {
+
+				$(".alert").removeClass("d-none");
+				$(".alert").html("product has been removed");
+				setTimeout(function() {
+
+					$(".alert").fadeOut("slow", function() {
+						$(".alert").fadeOut("slow");
+						location.reload();
+					});
+
+				}, 1200);
+
+			});
+    });
+
+    $("#clear").on("click", function() {
+    	var mnam = "clear cart"
+        $.post("/clear", {
+				claire:mnam
+			}, function(data) {
+
+				$(".alert").removeClass("d-none");
+				$(".alert").html("products have been removed");
+				setTimeout(function() {
+
+					$(".alert").fadeOut("slow", function() {
+						$(".alert").fadeOut("slow");
+						location.reload();
+					});
+
+				}, 1200);
+
+			});
+    });
+
+    $(".decrease").on("click", function(elem) {
+        var $main = $(this).val()
+        $(".quantity").each(function(i, obj) {
+            var main = $(this).attr("id")
+            if (main == $main) {
+            	var mai = $(this).html()
+            	if (mai > 1) {
+					$.post("/subquantity", {
+						minus:main
+					}, function() {
+						location.reload();
+					})
+				}
+			}
+        });
+    });
+
+    $(".increase").on("click", function(elem) {
+        var $main = $(this).val()
+        $(".quantity").each(function(i, obj) {
+            var main = $(this).attr("id")
+            if (main == $main) {
+            	var mai = $(this).html()
+            	if (mai >= 1) {
+					$.post("/addquantity", {
+						plus:main
+					}, function() {
+						location.reload();
+					})
+				}
+            }
+        });
+    });
+
+    $(".size-").on("change", function(elem) {
+        var man = $(this).val()
+        var mans = $(this).attr("name")
+        $.post("/size", {
+				size:man, prod:mans
+			}, function(data) {});
+    });
+
+    $(".color-").on("change", function(elem) {
+        var color = $(this).val()
+        var colors = $(this).attr("name")
+        $.post("/color", {
+				color:color, prod:colors
+			}, function(data) {});
+    });
+
+</script>
+<!-- for index -->
+<script>
+	window.onscroll = function scrollNav() {
+        var nav = document.getElementById("nav-bar");
+        var top = window.scrollY;
+        if (top >= 1) {
+            nav.classList.add('pos');
+        } else {
+            nav.classList.remove('pos');
+        }
+    }
+    $('#toggle-nav').click(function() {
+        var sidenav = document.getElementById("navigation");
+        sidenav.style.transform = "translateX(0%)";
+        $(".opaque").removeClass("d-none")
+    });
+    $('#toggle').click(function() {
+        var sidenav = document.getElementById("navigation");
+        sidenav.style.transform = "translateX(-100%)";
+        $(".opaque").addClass("d-none")
+    });
+</script>
+</body>
+</html>

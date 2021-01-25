@@ -1,0 +1,51 @@
+
+#section-pick {
+  height: 72vh;
+}
+
+.lab, .label {
+  color: #4b5e65;
+  font-family: 'lato', serif;
+  font-weight: 700;
+}
+
+#section-pick div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.m-file::-webkit-file-upload-button {
+  visibility: hidden;
+}
+
+.m-file::before {
+  content: 'select the file';
+  border: 2px solid #4b5e65;
+  font-family: 'lato', serif;
+  font-weight: 700;
+  font-size: initial;
+  color: #4b5e65;
+  padding: 5px 20px;
+  outline: 0;
+  white-space: nowrap;
+  cursor: pointer;
+  display: inline-block;
+  -webkit-user-select: none;
+}
+
+.m-file {
+  font-size: 0;
+  color: transparent;
+}
+
+.m-file:focus {
+  outline: 0 !important;
+  box-shadow: none !important;
+  border: none;
+}
+
+button {
+  background-color: #201b22 !important;
+}

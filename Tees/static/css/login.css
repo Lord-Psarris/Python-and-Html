@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&family=Prata&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.img-b {
+  object-fit: cover;
+  object-position: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+#nav-bar {
+  transition: 1s ease-in-out;
+  height: 15vh;
+  background-color: transparent;
+}
+
+#nav-bar.pos {
+  transition: 1s ease-in-out;
+  height: 10vh;
+  background-color: #ececec;
+}
+
+#nav-bar a, #nav-bar label {
+  text-decoration: none;
+  color: #ececec;
+}
+
+#nav-bar #cart {
+  text-decoration: none;
+  color: #ececec !important;
+}
+
+#nav-bar.pos a, #nav-bar.pos label {
+  text-decoration: none;
+  color: #2f435e !important;
+}
+
+#nav-bar.pos #cart {
+  text-decoration: none;
+  color: #2f435e !important;
+}
+
+#nav-bar.pos a:hover {
+  text-decoration: none;
+  color: #2f435e;
+}
+
+#nav-bar a:hover {
+  text-decoration: none;
+  color: #ececec;
+}
+
+#nav-bar .nav-open {
+  font-size: 18px;
+}
+#nav-bar .logo {
+  font-size: 28px;
+  font-family: "Prata", serif;
+}
+#nav-bar label {
+  font-size: 14px;
+  padding: 8px 0 0 2px;
+  font-family: "Lato", sans-serif;
+}
+#nav-bar label:nth-child(2) {
+  font-size: 14px;
+  padding: 0;
+}
+#nav-bar .mini-links {
+  font-size: 20px;
+}
+
+/*#2f435e, #44566c, #ececec, #4b5e65, #201b22.*/
+
+#navigation {
+  top: 0;
+  left: 0;
+  height: 100vh;
+  transform: translateX(-100%);
+  transition: 0.5s ease-in-out;
+}
+
+#nav-bar.pos #navigation {
+  background-color: #ececec;
+}
+
+.cart_times a {
+  font-size: 26px;
+  cursor: pointer;
+}
+
+.cart_times a span {
+  font-size: 13px;
+}
+
+.centered a {
+  margin: 5% 0;
+  font-family: 'lato', serif;
+  font-weight: 700;
+  font-size: 27px;
+  color: inherit;
+  text-decoration: none;
+  transition: 0.3s ease-in-out;
+  text-transform: uppercase;
+}
+
+.centered a:hover {
+    background-color: #4b5e65;
+    color: #ececec !important;
+    font-size: 29px;
+}
+
+.space-div {
+  height: 12vh;
+}
+
+.bord{
+  border: 1px solid white;
+}
+
+.main{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 400px;
+    padding: 40px;
+    box-sizing: border-box;
+    background: rgba(0,0,0,0.8);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    font-family: 'Lato', sans-serif !important;
+  }
+  .main h2{
+    margin: 0 0 30px;
+    padding: 0px;
+    color: #C4C4C4;
+    text-align: center;
+  }
+  .main .input-box{
+    position: relative;
+  }
+  .main .input-box input{
+    width: 100%;
+    padding: 10px 0px;
+    font-size: 16px;
+    color: #C4C4C4;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+    border: none;
+    outline: none;
+    background: transparent;
+    border-bottom: 1px solid #fff;
+  }
+  .main .input-box label{
+    position: absolute;
+    top: 0;
+    left: 0;
+    letter-spacing: 1px;
+    padding: 10px 0px;
+    font-size: 16px;
+    color: #C4C4C4;
+    transition: .5s;
+  }
+  .main .input-box input:focus ~ label,
+  .main .input-box input:valid ~ label{
+    top: -18px;
+    left: 0px;
+    color: #C4C4C4;
+    font-size: 12px;
+  }
+  .main input[type="submit"]{
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #C4C4C4;
+    background: #000;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor:pointer;
+  }
+  .main input[type="submit"]:hover{
+    background-color: #C4C4C4;
+  }
+
+  .sign-in {
+    color: #C4C4C4;
+    font-size: 12px;
+  }
+
+  @media (max-width: 576px) {
+    .main {
+      border-radius: 0;
+      padding: 60px;
+      width: 100%;
+    }
+
+    .main .input-box input {
+      margin-bottom: 18px;
+    }
+
+   #nav-bar .nav-open {
+    font-size: 16px;
+  }
+  #nav-bar .logo {
+    font-size: 22px;
+    font-family: "Prata", serif;
+  }
+  #nav-bar label {
+    font-size: 11px !important;
+    margin: 0 0 8px 0;
+  }
+  #nav-bar label:nth-child(2) {
+    font-size: 14px;
+    padding: 0;
+  }
+  #nav-bar .mini-links {
+    font-size: 16px;
+  }
+  #nav-bar .search span {
+    font-size: 14px;
+    margin-left: 5px;
+  }
+
+  .cart_times a {
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+  .centered a {
+    font-size: 20px;
+  }
+  }

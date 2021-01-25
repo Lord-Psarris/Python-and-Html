@@ -1,0 +1,198 @@
+body {
+  overflow-x: hidden;
+}
+.about-section-1 {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: -100;
+  background-color: black;
+}
+
+.about-section-1 img {
+  width: 100%;
+  z-index: -10;
+  height: 100vh;
+  object-fit: cover;
+  opacity: 0.7;
+}
+
+.about-contact img {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  opacity: 0.7;
+  object-fit: cover;
+}
+
+.about-section-1 div {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.about-section-1 p {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 110px;
+  font-family: "Prata", serif;
+  z-index: 10;
+  width: 1000px;
+}
+
+.about-section-main {
+  background-color: #f5f4f2;
+  top: 100%;
+  left: 0;
+  right: -10;
+  width: 100%;
+}
+
+.l {
+  width: 100% !important;
+}
+
+@media (max-width: 991px) {
+  .about-section-1 p {
+    width: 800px;
+    font-size: 100px;
+  }
+}
+
+@media (max-width: 767px) {
+  .about-section-1 p {
+    font-size: 70px;
+    width: 90%;
+  }
+}
+
+@media (max-width: 450px) {
+  .about-contact img {
+    opacity: 0.6;
+  }
+  .about-section-1 p {
+    top: 65%;
+    font-size: 50px;
+    width: 90%;
+  }
+}
+
+.about-grid {
+  font-family: "Prata", serif;
+  color: #000;
+  width: 100%;
+  font-weight: 500;
+}
+
+.about-grid h4 {
+  font-weight: 600;
+}
+
+.about-grid div {
+  background-color: yellow;
+  line-height: 2.1;
+}
+
+.bord-up {
+  border-top: 5px solid black;
+}
+
+.bord-diff {
+  border-left: 2px solid #ff5e6c;
+  border-right: 2px solid #ff5e6c;
+}
+
+.about-passion {
+  width: 100%;
+}
+
+.about-passion h4 {
+  text-transform: uppercase;
+  font-family: "Prata", serif;
+  font-weight: 500;
+  display: none;
+}
+
+.about-passion h2 {
+  text-transform: uppercase;
+  font-family: "Prata", serif;
+  font-weight: 500;
+  display: block;
+}
+
+.bord {
+  border: 1px solid blue;
+}
+
+.about-passion h1 {
+  text-transform: uppercase;
+  font-family: "Prata", serif;
+  font-weight: 500;
+  font-size: 4.5em;
+  text-decoration: underline;
+}
+
+.about-contact-inner {
+  height: 100vh;
+  width: 100%;
+  background-color: black;
+}
+
+.about-contact h1 {
+  font-family: "Prata", serif;
+  font-weight: 500;
+  font-size: 4.5em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.about-contact a {
+  font-family: "Lato", sans-serif;
+  text-transform: uppercase;
+  border-radius: 0 !important;
+  border-color: transparent !important;
+  position: absolute;
+  background-color: crimson !important;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@media (max-width: 767px) {
+  .about-passion h2 {
+    display: none;
+  }
+
+  .about-passion h4 {
+    display: block;
+  }
+
+  .bord-diff {
+    border-left: 0px solid #ff5e6c;
+    border-right: 0px solid #ff5e6c;
+    border-top: 2px solid #ff5e6c;
+    border-bottom: 2px solid #ff5e6c;
+  }
+
+  .about-passion h1 {
+    font-size: 2.67em;
+  }
+
+  .about-contact h1 {
+    font-size: 2em;
+  }
+
+  .about-contact a {
+    font-weight: 600;
+    font-size: 0.9em !important;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}

@@ -1,0 +1,97 @@
+{% extends "layout.html" %}
+
+{% block title %}
+	Contact - The Talking Tees
+{% endblock %}
+
+{% block main_body %}
+	<section class="contact-section-1">
+            <h1 class="text-center">
+                Come work with us!
+            </h1>
+        </section>
+        <section class="contact-section-2 my-md-5 my-3">
+            <div class="name-number mx-auto">
+                <div class="row col-12">
+                    <div class="col-12 col-sm-6 col-md-4 text-center">
+                        hello@somethinggg.io —
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-4 text-center">
+                        +234 701 394 4433 —
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-4 text-center">
+                        3 Ogunkoya Street, Ijegun, Lagos
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="manager" class="contact-section-contact my-3 py-5">
+            <!--  -->
+            <div id="success" class="d-none flex-column justify-content-center mx-auto">
+                <svg class="loader-sg mx-auto" width="151" height="127" viewBox="0 0 151 127" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path class="svg-non-text" d="M107 66C107 90.8131 85.9979 111 60 111C34.0021 111 13 90.8131 13 66C13 41.1869 34.0021 21 60 21C85.9979 21 107 41.1869 107 66Z" stroke="#736D6D" stroke-width="2"/>
+                    <path class="svg-non-text" d="M147 76.5C147 91.0554 134.1 103 118 103C101.9 103 89 91.0554 89 76.5C89 61.9446 101.9 50 118 50C134.1 50 147 61.9446 147 76.5Z" fill="#f5f4f2" stroke="#736D6D" stroke-width="2"/>
+                    <path d="M65.4219 35.8125V48.2812H74.0938V58.2188H65.4219V83.5312C65.4219 85.4062 65.7812 86.75 66.5 87.5625C67.2188 88.375 68.5938 88.7812 70.625 88.7812C72.125 88.7812 73.4531 88.6719 74.6094 88.4531V98.7188C71.9531 99.5312 69.2188 99.9375 66.4062 99.9375C56.9062 99.9375 52.0625 95.1406 51.875 85.5469V58.2188H44.4688V48.2812H51.875V35.8125H65.4219Z" fill="#736D6D" class="svg-text"/>
+                    <path class="svg-non-text" d="M111 62H105" stroke="#736D6D"/>
+                    <path class="svg-non-text" d="M132 62H127" stroke="#736D6D"/>
+                    <path class="svg-non-text" d="M111 62C113.015 63.549 119.148 67.8966 127 62" stroke="#736D6D"/>
+                    <path class="svg-non-text" d="M132 62L143 70" stroke="#736D6D"/>
+                    <path class="svg-non-text" d="M94.91 69.4525L105.24 62.1184" stroke="#736D6D"/>
+                    <path class="svg-non-text" d="M143 69.2621L134.038 74.0871" stroke="#736D6D"/>
+                    <path class="svg-non-text" d="M95.0075 69.346L104.186 73.9666" stroke="#736D6D"/>
+                    <path class="svg-non-text" d="M103.706 74.0877L107.043 71.7466" stroke="#736D6D"/>
+                    <path class="svg-non-text" d="M134.176 73.9694L130.701 71.7296" stroke="#736D6D"/>
+                    <rect x="106.5" y="70.5" width="25" height="19" class="id" fill="#f5f4f2" stroke="#736D6D"/>
+                    <rect x="104" y="68" width="30" height="5" fill="#f5f4f2"/>
+                </svg>      
+            </div>
+            <p id="success2" class="sucess d-none w-100 text-center justify-content-center" style="font-family: 'Prata', serif;">
+                Mail successfully sent! 
+            </p>
+            <!--  -->
+            <div class="col-12 col-md-9 mx-auto contact">
+                <!-- tag -->
+                <h1 class="send text-left d-md-block d-none">Send us a message!</h1>
+
+                <h2 class="send text-left d-md-none d-block">Send us a message!</h2>
+                <!-- names -->
+
+                
+
+
+                <div class="d-flex p-0 m-0">
+                    
+                    <div class="col-6  p-1">
+                        <label class="my-1 pl-1 label text-left">
+                            First Name
+                        </label>
+                        <input id="c-fname" type="text" name="ContactName" class="m-0 w-100 col-12" required>
+                    </div>
+                    <div class="col-6  p-1">
+                        <label class="my-1 pl-1 label text-left">
+                            Last Name
+                        </label>
+                        <input id="c-lname" type="text" name="ContactLastName" class="m-0 w-100 col-12">
+                    </div>
+                </div>
+
+                <!-- email -->
+                <div class="row p-1 mt-3 mt-md-4 col-12 mx-auto mx-md-0 d-table">
+                    <label class="my-1 ml-1 label text-left">
+                        E-mail
+                    </label>
+                    <input id="c-email" type="email" name="Contactemail" class="m-0 w-100 col-12" required>
+                </div>
+
+                <!-- comment -->
+                <div class="row p-1 mt-3 mt-md-4 col-12 mx-auto mx-md-0 d-table">
+                    <label class="my-1 ml-1 label text-left">
+                        Comment
+                    </label>
+                    <input id="c-comment" type="text" name="Contactcomment" placeholder="lets work together!..."
+                        class="text-left m-0 w-100 t-note col-12">
+                </div>
+                <button id="mail-button" class="ml-1 mt-md-3 mt-2 px-md-4 btn">Mail</button>
+            </div>
+        </section>
+{% endblock %}

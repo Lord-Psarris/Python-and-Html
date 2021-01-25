@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&family=Prata&display=swap');
+
+$bg: #FFFEFB;
+$prata: 'Prata', serif;
+$lato: 'Lato', sans-serif;
+$grey: #C4C4C4;
+$main: #f5f4f2;
+$black: #000;
+$white: #ffffff;
+$dark: #736D6D;
+
+body {
+	background: $bg !important;
+	background-size: cover;
+	scroll-behaviour: smooth;
+}

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>title</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../static/css/shop.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap/font-awesome/css/font-awesome.min.css">
+</head>
+<body>
+
+	<main>
+		<div class="opaque d-none"></div>
+
+		<section id="shop-section-1">
+			<img src="../static/assets/cta 1.jpg" class="w-100">
+			<h1 class="text-light w-100 justify-content-center text-center">our merch</h1>
+		</section>
+
+		<!-- category -->
+			<section class="shop-section-cat m-0 p-0">
+			    <div class="shop pt-3 py-1 justify-content-center w-100">
+			        <a class="justify-content-center navbar category-toggle text-center" href="#category" data-toggle="collapse" role="button">Shop by category&nbsp;<i class="fa fa-chevron-down"></i></a>
+			    </div>
+			    <hr class="bg-light p-0 m-0">
+
+			    <!-- categories -->
+			    <div id="category" class="w-100 m-0 row collapse">
+					<div class="col-10 col-md-8 col-lg-9 row p-0 mx-auto h-100 category-item">
+						<div class="col-md-4 col-lg-2 col-sm-6 col-12 d-flex justify-content-center cat-list">
+							<button data-filter=".tees" class="w-100 text-center btn my-auto">Tee shirts</button>
+						</div>
+						<div class="col-md-4 col-lg-2 col-sm-6 col-12 d-flex justify-content-center cat-list">
+							<button data-filter=".sweat" class="w-100 text-center btn my-auto">sweatshirts</button>
+						</div>
+						<div class="col-md-4 col-lg-2 col-sm-6 col-12 d-flex justify-content-center cat-list">
+							<button data-filter=".hoodies" class="w-100 text-center btn my-auto">hoodies</button>
+						</div>
+						<div class="col-md-4 col-lg-2 col-sm-6 col-12 d-flex justify-content-center cat-list">
+							<button data-filter=".durag" class="w-100 text-center btn my-auto">durags</button>
+						</div>
+						<div class="col-md-4 col-lg-2 col-sm-6 col-12 d-flex justify-content-center cat-list">
+							<button data-filter=".jog" class="w-100 text-center btn my-auto">joggers</button>
+						</div>
+						<div class="col-md-4 col-lg-2 col-sm-6 col-12 d-flex justify-content-center cat-list">
+							<button data-filter=".piece" class="w-100 text-center btn my-auto">two-piece</button>
+						</div>
+					</div>
+					<hr class="bg-light p-0 m-0">
+				</div>
+			</section>
+		<!-- category page -->
+
+
+		<div class="alert-success alert col-8 mx-auto text-center d-none">product has been added to cart</div>
+		<!-- shop section 2 -->
+			<section id="shop-section-3" class="row col-12 container mx-auto pb-5">
+				<div class="pb-sm-5 p-md-5 p-0 p-sm-0">
+					<div id="main-items" class="mx-auto col-12 justify-content-center p-0 p-lg-5 pt-2 pt-md-0 row px-sm-0">
+
+						<div class="main-items-list tees col-lg-4 row px-sm-3 col-md-6 col-sm-5 mt-1 w-100 p-0 justify-content-center col-12 mx-auto mt-5" id="$productid">
+					        <div id="addtocart" class="w-100 col-11 col-sm-12 justify-content-center">
+					            <img src="../static/assets/cta 1.jpg" class="col-9 mx-auto h-50 d-table">
+					            <h6 class="text-dark text-center w-100 mt-1">$productname</h6>
+					            <p class="text-dark mx-auto text-center justify-content-center">$productprice</p>
+					            <button onclick="add(this)" value="$productid" id="$productid" class="d-table btn btn-danger text-center w-50 justify-content-center mx-auto" style="border-radius:0;">Add to cart</button>
+					             <button onclick="detail(this)" value="$productid" id="$productid" class="mt-2 d-table btn btn-danger text-center w-50 justify-content-center mx-auto" style="border-radius:0;">Details</button>
+					            <input type="hidden" id="id" name="product_id" value="$productid">
+					               <hr/>
+					        </div>
+					    </div>
+					    <div class="main-items-list sweat col-lg-4 row px-sm-3 col-md-6 col-sm-5 mt-1 w-100 p-0 justify-content-center col-12 mx-auto mt-5" id="$productid">
+					        <div id="addtocart" class="w-100 col-11 col-sm-12 justify-content-center">
+					            <img src="../static/assets/cta 1.jpg" class="col-9 mx-auto h-50 d-table">
+					            <h6 class="text-dark text-center w-100 mt-1">$productname</h6>
+					            <p class="text-dark mx-auto text-center justify-content-center">$productprice</p>
+					            <button onclick="add(this)" value="$productid" id="$productid" class="d-table btn btn-danger text-center w-50 justify-content-center mx-auto" style="border-radius:0;">Add to cart</button>
+					             <button onclick="detail(this)" value="$productid" id="$productid" class="mt-2 d-table btn btn-danger text-center w-50 justify-content-center mx-auto" style="border-radius:0;">Details</button>
+					            <input type="hidden" id="id" name="product_id" value="$productid">
+					               <hr/>
+					        </div>
+					    </div>
+
+					    <div class="main-items-list jog col-lg-4 row px-sm-3 col-md-6 col-sm-5 mt-1 w-100 p-0 justify-content-center col-12 mx-auto mt-5" id="$productid">
+					        <div id="addtocart" class="w-100 col-11 col-sm-12 justify-content-center">
+					            <img src="../static/assets/cta 1.jpg" class="col-9 mx-auto h-50 d-table">
+					            <h6 class="text-dark text-center w-100 mt-1">$productname</h6>
+					            <p class="text-dark mx-auto text-center justify-content-center">$productprice</p>
+					            <button onclick="add(this)" value="$productid" id="$productid" class="d-table btn btn-danger text-center w-50 justify-content-center mx-auto" style="border-radius:0;">Add to cart</button>
+					             <button onclick="detail(this)" value="$productid" id="$productid" class="mt-2 d-table btn btn-danger text-center w-50 justify-content-center mx-auto" style="border-radius:0;">Details</button>
+					            <input type="hidden" id="id" name="product_id" value="$productid">
+					               <hr/>
+					        </div>
+					    </div>
+
+					    <div class="main-items-list hoodies col-lg-4 row px-sm-3 col-md-6 col-sm-5 mt-1 w-100 p-0 justify-content-center col-12 mx-auto mt-5" id="$productid">
+					        <div id="addtocart" class="w-100 col-11 col-sm-12 justify-content-center">
+					            <img src="../static/assets/cta 1.jpg" class="col-9 mx-auto h-50 d-table">
+					            <h6 class="text-dark text-center w-100 mt-1">$productname</h6>
+					            <p class="text-dark mx-auto text-center justify-content-center">$productprice</p>
+					            <button onclick="add(this)" value="$productid" id="$productid" class="d-table btn btn-danger text-center w-50 justify-content-center mx-auto" style="border-radius:0;">Add to cart</button>
+					             <button onclick="detail(this)" value="$productid" id="$productid" class="mt-2 d-table btn btn-danger text-center w-50 justify-content-center mx-auto" style="border-radius:0;">Details</button>
+					            <input type="hidden" id="id" name="product_id" value="$productid">
+					               <hr/>
+					        </div>
+					    </div>
+
+					</div>
+				</div>
+			</section>
+		<!-- shop section 2 end -->
+
+		<!-- details -->
+			<div class="col-11 col-md-11 col-lg-10 row container position-fixed d-none" id="details">
+				<div class="col-12 d-flex flex-md-row flex-column details position-relative">
+					<div id="close-details" class="position-absolute">
+						<i class="fa fa-times"></i>
+					</div>
+					<div class="col-md-6 col-12 d-md-flex mt-1">
+						<div class="detail-img my-auto mx-auto">
+							<img src="../static/assets/cta 1.jpg" class="w-100 h-100">
+						</div>
+					</div>
+					<div class="col-md-6 col-12 m-0">
+						<div class="detail-main mt-md-3 mt-1">
+							<div class="main-colors">
+								<label class="text-left">Available colors</label>
+								<div class="colors d-flex flex-row justify-content-start">
+									<div class="p-md-3 mx-2 color-red">
+									</div>
+									<div class="p-md-3 mx-2 color-blue">
+									</div>
+									<div class="p-md-3 mx-2 color-white">
+									</div>
+									<div class="p-md-3 mx-2 color-grey">
+									</div>
+									<div class="p-md-3 mx-2 color-black">
+									</div>
+								</div>
+							</div>
+							<div class="description d-flex flex-column justify-content-center mt-md-4 mt-1">
+								<label class="w-100 text-center mt-1 mt-md-0">
+									#2000
+								</label>
+								<p class="w-100 mt-0 mt-md-1 text-center">
+									Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+									tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+									quis nostrud exercitation ullamc
+								</p>
+								<div class="d-flex justify-content-center mt-md-2">
+									sizes:
+									<label class="mx-md-3 mx-2 text-center">XXL</label>
+									<label class="mx-md-3 mx-2 text-center">XL</label>
+									<label class="mx-md-3 mx-2 text-center">L</label>
+									<label class="mx-md-3 mx-2 text-center">M</label>
+									<label class="mx-md-3 mx-2 text-center">S</label>
+								</div>
+							</div>
+						</div> 
+					</div>
+				</div>
+			</div>
+		<!-- details end -->
+	</main>
+
+<script src="/C:/Users/Dr Steve/Documents/all sublime/bootstrap/js/jquery.js"></script>
+<script src="/C:/Users/Dr Steve/Documents/all sublime/bootstrap/js/popper.min.js"></script>
+<script src="/C:/Users/Dr Steve/Documents/all sublime/bootstrap/js/bootstrap.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha512-Zq2BOxyhvnRFXu0+WE6ojpZLOU2jdnqbrM1hmVdGzyeCa1DgM3X5Q4A/Is9xA1IkbUeDd7755dNNI/PzSf2Pew==" crossorigin="anonymous"></script>
+<script>
+
+	// up next add the respective id's and values to the ajax form so it has something to send, 
+	// n crate ajax form for the details
+	function add(elem) {
+		const id = $(elem).val();
+		$.ajax({
+            url: "", //py url file
+            method: "post",
+            data: {add : id},
+            dataType: "text",
+            success: function(){
+                $(".alert").removeClass("d-none");
+				setTimeout(function() {
+					$(".alert").fadeOut("slow", function() {
+						$(".alert").addClass("d-none");
+						$(".alert").fadeIn("slow");
+					});
+				}, 1200);
+            }
+        });
+    }
+
+    function detail(elem) {
+    	$("#details").removeClass("d-none");
+    	$(".opaque").removeClass("d-none");
+	};
+
+	$("#close-details").on("click", function() {
+		$("#details").addClass("d-none");
+    	$(".opaque").addClass("d-none");
+	});
+
+	// inna
+	var cat = $("#main-item").isotope({
+		itemSelector: '.main-items-list',
+	});
+
+	// binna
+	$(".category-item").on("click", "button", function(){
+		var filters = $(this).attr('data-filter');
+		alert(filters)
+	})
+</script>
+</body>
+</html>

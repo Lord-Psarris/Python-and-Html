@@ -1,0 +1,183 @@
+{% extends "cart-layout.html" %}
+
+{% block title %}
+	Cart - The Talking Tees
+{% endblock %}
+
+{% block main_body %}
+    <main>
+		<section class="section-cart-1 py-md-5 pb-1">
+            <h1 class="text-center justify-content-center">your cart</h1>
+        </section>
+
+        <div class="alert-danger alert col-8 col-md-6 mx-auto text-center d-none"></div>
+        {% if carts == True %}
+        <section id="cart-open" class="section-cart-main py-5 position-relative mt-1">
+            <div class="col-11 col-md-10 col-lg-8 p-0 mx-auto products d-flex flex-column flex-md-row">
+
+                <div class="w-100 col-12 col-md-8 p-0">
+
+                {% for row in items %}
+                    <div id="products" class="w-100 mb-lg-3 mb-5">
+                        <div id="delete" class="d-table d-md-none mx-auto my-1">
+                            <button id="big-delete" class="deletes btn btn-danger fa fa-times mx-auto" value="{{ row[0] }}"></button>
+                        </div>
+                        <div class="row col-12 mx-auto product">
+                            <div class="d-flex flex-row mx-auto mx-md-0">
+                                <div class="delete my-auto mx-md-2 mx-lg-4 d-none d-md-block">
+                                    <button id="sm-delete" class="btn btn-danger text-center mx-auto" value="{{ row[0] }}">
+                                        <i class="fa fa-times"></i>
+                                    </button>
+                                </div>
+                                <div class="cart-image mr-2 mr-md-4 my-auto py-2">
+                                    <!-- sm screen wigth is 80px and height is 100px -->
+                                    <img src="{{ row[3] }}" class="w-100 h-100">
+                                </div>
+                                <div class="cart-details d-flex flex-column">
+                                    <div class="product-name mt-2">
+                                        <label>
+                                            {{ row[1] }}
+                                        </label>
+                                    </div>
+                                    <div class="product-price">
+                                        <label>
+                                            ₦{{ row[2] }}
+                                        </label>
+                                    </div>
+                                    <div class="d-flex flex-row my-auto">
+                                        <div class="product-size">
+                                            <select class="form-control size-" name="{{ row[0] }}" id="size">
+                                                    <option disabled selected>--Size--</option>
+                                                {% if row[7] == "S" %}
+                                                    <option selected value="S">S</option>
+                                                {% elif row[7] != "S" %}
+                                                    <option value="S">S</option>
+                                                {% endif %}
+
+                                                {% if row[7] == "M" %}
+                                                    <option selected value="M">M</option>
+                                                {% elif row[7] != "M" %}
+                                                    <option value="M">M</option>
+                                                {% endif %}
+
+                                                {% if row[7] == "L" %}
+                                                    <option selected value="L">L</option>
+                                                {% elif row[7] != "L" %}
+                                                    <option value="L">L</option>
+                                                {% endif %}
+
+                                                {% if row[7] == "XL" %}
+                                                    <option selected value="XL">XL</option>
+                                                {% elif row[7] != "XL" %}
+                                                    <option value="XL">XL</option>
+                                                {% endif %}
+                                            </select>
+                                        </div>
+                                        <div class="product-color ml-1">
+                                            <select class="form-control color-" name="{{ row[0] }}" id="color_">
+                                                    <option disabled selected>--Color--</option>
+
+                                                {% if row[8] == "White" %}
+                                                    <option selected value="White">White</option>
+                                                {% elif row[8] != "White" %}
+                                                    <option value="White">White</option>
+                                                {% endif %}
+
+                                                {% if row[8] == "Blue" %}
+                                                    <option selected value="Blue">Blue</option>
+                                                {% elif row[8] != "Blue" %}
+                                                    <option value="Blue">Blue</option>
+                                                {% endif %}
+
+                                                {% if row[8] == "Red" %}
+                                                    <option selected value="Red">Red</option>
+                                                {% elif row[8] != "Red" %}
+                                                    <option value="Red">Red</option>
+                                                {% endif %}
+
+                                                {% if row[8] == "Black" %}
+                                                    <option selected value="Black">Black</option>
+                                                {% elif row[8] != "Black" %}
+                                                    <option value="Black">Black</option>
+                                                {% endif %}
+
+                                                {% if row[8] == "Grey" %}
+                                                    <option selected value="Grey">Grey</option>
+                                                {% elif row[8] != "Grey" %}
+                                                    <option value="Grey">Grey</option>
+                                                {% endif %}
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div id="quant" class="product-quantity my-1 my-lg-2">
+                                        <button class="decrease btn fa fa-minus" value="{{ row[0] }}"></button>
+                                        <label id="{{ row[0] }}" class="text-center quantity">
+                                            {{ row[6] }}
+                                        </label>
+                                        <button class="increase btn fa fa-plus" value="{{ row[0] }}"></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="mx-md-3">
+                {% endfor %}
+                </div>
+
+                <div id="total" class="col-12 col-md-4 px-2 mt-3 mt-md-0">
+                    <h1>Total</h1>
+                    <div class="number d-flex justify-content-between col-lg-7 col-8 p-0">
+                        <label>Number of items:</label>
+                        <span>{{ number }}</span>
+                    </div>
+                    <div class=" subtotal d-flex justify-content-between col-9 col-lg-8 p-0">
+                        <label class="my-auto">Subtotal:</label>
+                        <span class="my-auto">₦{{ subtotal }}</span>
+                    </div>
+                    <div class=" ship d-flex justify-content-between col-9 col-lg-8 p-0">
+                        <label class="my-auto">Shipping fee:</label>
+                        <span class="my-auto">₦2000</span>
+                    </div>
+                    <div class=" total d-flex justify-content-between col-9 col-lg-8 p-0">
+                        <label class="my-auto">Total:</label>
+                        <span class="my-auto">₦{{ total }}</span>
+                    </div>
+                    <div id="clear-cart">
+                        <button id="clear" class="btn text-danger">
+                            <i class="fa fa-trash"></i>
+                            Clear cart
+                        </button>
+                    </div>
+                    <p class="my-lg-4 my-3"></p>
+                    <div class="mx-auto d-table pb-2">
+                        {% if co == True %}
+                            <a href="/checkout" class="btn btn-dark" type="button">
+                                Checkout
+                            </a>
+                        {% elif co == False %}
+                            <button href="/checkout" class="btn btn-dark" type="button" disabled>
+                                Checkout
+                            </button>
+                        {% endif %}
+                    </div>
+                    <hr>
+                </div>
+
+            </div>
+        </section>
+	    {% elif carts == False %}
+        <section class="cart-container container pb-sm-3 justify-content-center">
+            <div class="row container col-12">
+                <div class="col-md-3 col-10 col-sm-6 mx-auto justify-content-center py-5">
+                    <h5 class="text-center fa-1x">
+                        Your cart is empty
+                    </h5>
+                    <a href="/shop" class="w-100 btn btn-danger">Continue shopping
+                    <i class="fa fa-arrow-right text-light font-weight-light"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+        {% endif %}
+    </main>
+{% endblock %}

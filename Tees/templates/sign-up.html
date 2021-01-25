@@ -1,0 +1,46 @@
+{% extends "log-layout.html" %}
+
+{% block title %}
+	Sign-up - The Talking Tees
+{% endblock %}
+
+{% block main_body %}
+  <div class="main">
+    <h2>Sign Up</h2>
+    <form action="/sign-up" method="post" id="form-up">
+
+      <div class="input-box">
+        <input id="username" type="text" autocomplete="off" required>
+        <label for="username">Username</label>
+      </div>
+
+      <div class="input-box">
+        <input id="email" type="email" autocomplete="off" required>
+        <label for="email">Email</label>
+      </div>
+
+      <div class="input-box">
+        <input id="phone" type="tel" autocomplete="off" required>
+        <label for="phone">Phone number</label>
+      </div>
+
+      <div class="input-box">
+        <input id="pass" type="password" autocomplete="off" required>
+        <label for="pass">Password</label>
+      </div>
+
+      <div class="input-box">
+        <input id="pass2" type="password" autocomplete="off" required>
+        <label for="pass2">Confirm Password</label>
+      </div>
+      <button type="submit" name="submit" class="btn btn-dark" id="re-snd" value="sign-up">Sign up</button>
+    </form>
+
+    <span id="response" class="d-none text-light mt-1" style="font-size: 12px; font-family: 'Lato', sans-serif;"></span>
+    <div class="w-100 col-12 row d-flex justify-content-end mt-1">
+      <div class="text-center text-light sign-in">
+        Already registered?<a href="{{ url_for('sign_in') }}">&nbsp; Sign in</a>
+      </div>
+    </div>
+  </div>
+{% endblock %}

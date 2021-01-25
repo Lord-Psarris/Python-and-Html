@@ -1,0 +1,94 @@
+{% extends "layout.html" %}
+
+{% block title %}
+	About - The Talking Tees
+{% endblock %}
+
+{% block main_body %}
+	<main>
+		<section id="firstFixed" class="fix about-section-1">
+
+			<div>
+				<img src="../static/assets/free.jpg">
+				<p class="text-center text-light">
+					Your one stop fashion store
+				</p>
+			</div>
+		</section>
+
+		<!-- below 100% -->
+		<section class="about-section-main">
+
+			<!-- inner section -->
+			<section class="l position-relative w-100 p-0 m-0">
+				<!-- hype grid -->
+				<div class="row col-12 bord-up mx-auto about-grid p-0">
+					<div class="col-12 col-md-4 text-left container p-md-3 p-3">
+						<h4 class="">
+							Creating
+						</h4>
+						<p class=" pt-3 pr-2">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+							quis nostrud exercitation ullamco
+						</p>
+					</div>
+
+					<div class="col-12 bord-diff col-md-4 text-left container p-md-3 p-3">
+						<h4 class="">
+							Designing
+						</h4>
+						<p class=" pt-3 pr-2">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+							quis nostrud exercitation ullamco
+						</p>
+					</div>
+
+					<div class="col-12 col-md-4 text-left container p-md-3 p-3">
+						<h4 class="">
+							Innovating
+						</h4>
+						<p class=" pt-3 pr-2">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+							quis nostrud exercitation ullamco
+						</p>
+					</div>
+				</div>
+
+				<!-- values -->
+				<div class="about-passion pb-3">
+					<h4 class="mx-md-5 ml-sm-5 mx-3 mt-5 pt-md-4 pt-0">
+						our values:
+					</h4>
+					<h2 class="mx-md-5 ml-sm-5 mx-3 mt-5 pt-md-4 pt-0">
+						our values:
+					</h2>
+					<div class="col-11 mx-auto row p-0 mt-3 d-table text-center">
+						<div class="row text-center">
+							<h1 class="col-12 mx-auto mx-lg-0 mt-3 col-lg-5">
+								Quality
+							</h1>
+							<h1 class="col-12 mx-auto mx-lg-0 mt-5 mt-lg-3 col-lg-5">
+								Innovation
+							</h1>
+							<h1 class="col-12 mx-auto mt-5 col-lg-8 text-lg-left">
+								Perfection
+							</h1>
+						</div>
+					</div>
+				</div>
+
+				<div class="about-contact position-relative mt-5 row text-center">
+					<img src="../static/assets/work 3.jpg">
+					<div class="about-contact-inner">
+						<h1 class="w-100 text-light">Lets make the best tees together!</h1>
+						<a href="{{ url_for('contact') }}" class="btn btn-danger py-lg-2 px-lg-5 px-2 px-md-4 mt-1">Contact us</a>
+					</div>
+					
+				</div>
+			</section>
+		</section>
+	</main>
+{% endblock %}

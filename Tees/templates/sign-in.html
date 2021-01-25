@@ -1,0 +1,48 @@
+{% extends "log-layout.html" %}
+
+{% block title %}
+	Sign-in - The Talking Tees
+{% endblock %}
+
+{% block main_body %}
+  <div class="main">
+    <h2>Login</h2>
+    <form action="/log" method="post" id="form-in">
+
+      <div class="input-box">
+        <input id="username" type="text" name="username" autocomplete="off" required>
+        <label for="username">Username or email</label>
+      </div>
+
+      <div class="input-box">
+        <input id="pass" type="password" name="password"  autocomplete="off" required>
+        <label for="pass">Password</label>
+      </div>
+      <button type="submit" name="submit" class="btn btn-dark" id="re-snd" value="sign-in">Sign in</button>
+    </form>
+
+    <span id="response" class="d-none text-light mt-1" style="font-size: 12px; font-family: 'Lato', sans-serif;"></span>
+    <div class="w-100 col-12 row m-0 p-0 mt-1">
+      <div class="col-6 m-0 p-0">
+        <div class=" text-left w-100 text-light sign-in">
+          <a href="{{ url_for('reset') }}">Reset password</a>
+        </div>
+      </div>
+      <div class="col-6 m-0 p-0">
+        <div class=" text-right w-100 text-light sign-in">
+          Not registered?<a href="{{ url_for('sign_up') }}">&nbsp; Sign up</a>
+        </div>
+      </div>
+    </div>
+    <div class="w-100 col-12 row m-0 p-0 mt-1">
+      <div class="col-6 m-0 p-0">
+      </div>
+      <div class="col-6 m-0 p-0">
+        <div class=" text-right w-100 text-light sign-in">
+            <a href="/logout">Logout</a>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+

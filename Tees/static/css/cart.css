@@ -1,0 +1,220 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&family=Prata&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #201b22 !important;
+  background-size: cover;
+  overflow-x: hidden;
+}
+
+section {
+  width: 100%;
+}
+
+.space-div {
+  height: 14vh;
+}
+
+.footereer {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+button:focus, button.focus,
+.btn:focus, .btn.focus,
+.form-control:focus, .form-control.focus {
+  outline: 0 !important;
+  box-shadow: none !important;
+}
+
+.section-cart-1 {
+  font-family: "Prata", serif;
+  text-transform: capitalize;
+}
+.section-cart-1 h1 {
+  font-size: 5em !important;
+  color: #ececec;
+}
+
+.section-cart-main {
+  background-color: #ececec;
+}
+
+.section-cart-main .products {
+  border-radius: 10px;
+  background-color: #ececec;
+  box-shadow: 0px 20px 20px #ccc;
+}
+.section-cart-main .products .product .cart-image {
+  width: 190px;
+  height: 210px;
+  max-height: 200px;
+}
+.section-cart-main .products .product .cart-details {
+  height: 140px;
+}
+.section-cart-main .products .product .cart-details .product-name label {
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+}
+.section-cart-main .products .product .cart-details .product-price label {
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  font-size: 13px;
+  margin-top: -5px;
+}
+.section-cart-main .products .product .cart-details .product-size select,
+.section-cart-main .products .product .cart-details .product-color select {
+  border: none;
+  background: transparent;
+  font-size: 13px !important;
+}
+.section-cart-main .products .product .cart-details .product-size select option,
+.section-cart-main .products .product .cart-details .product-color select option {
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+}
+.section-cart-main .products .product .cart-details .product-quantity label {
+  width: 20px;
+}
+.section-cart-main .products .product .cart-details .product-quantity button {
+  font-size: 14px;
+}
+.section-cart-main .products #total h1 {
+  color: #000;
+  font-family: "Prata", serif;
+  font-weight: 300;
+}
+.section-cart-main .products #total .number {
+  height: 30px;
+}
+.section-cart-main .products #total .subtotal,
+.section-cart-main .products #total .ship,
+.section-cart-main .products #total .total {
+  height: 40px;
+}
+.section-cart-main .products #total label {
+  font-family: "Lato", sans-serif;
+  font-size: 16px;
+  color: #201b22;
+  font-weight: 100;
+}
+.section-cart-main .products #total span {
+  font-family: "Lato", sans-serif;
+  color: #201b22;
+  font-size: 14px;
+}
+.section-cart-main .products #total #clear-cart button {
+  background: transparent;
+}
+.section-cart-main .products #total a {
+  background: #201b22;
+  color: #ececec;
+  font-family: "Lato", sans-serif;
+}
+.section-cart-main .products #total a:hover {
+  background: #201b22;
+  color: #ececec;
+}
+
+.cart-container {
+  color: #ececec;
+}
+
+@media (max-width: 768px) {
+  .section-cart-1 h1 {
+    font-size: 3em !important;
+  }
+
+  .products .product .cart-image {
+    width: 100px !important;
+    height: 130px !important;
+    max-height: 130px !important;
+  }
+  .products .product .cart-details {
+    height: 120px !important;
+  }
+  .products .product .cart-details .product-name label {
+    font-size: 15px !important;
+  }
+  .products .product .cart-details .product-price label {
+    font-size: 13px !important;
+    margin-top: -10px !important;
+  }
+  .products .product .cart-details .product-size select,
+.products .product .cart-details .product-color select {
+    font-size: 12px !important;
+  }
+  .products .product .cart-details .product-size select option,
+.products .product .cart-details .product-color select option {
+    font-family: "Lato", sans-serif;
+    font-weight: 300;
+  }
+  .products .product .cart-details .product-quantity label {
+    width: 15px !important;
+    font-size: 14px !important;
+  }
+  .products .product .cart-details .product-quantity button {
+    font-size: 12px;
+  }
+  .products #total h1 {
+    color: #000;
+    font-family: "Prata", serif;
+    font-weight: 300;
+  }
+  .products #total .number {
+    height: 25px;
+  }
+  .products #total .number label,
+.products #total .number span {
+    font-size: 14px;
+  }
+  .products #total .subtotal,
+.products #total .ship,
+.products #total .total {
+    height: 25px;
+  }
+  .products #total .subtotal label,
+.products #total .subtotal span,
+.products #total .ship label,
+.products #total .ship span,
+.products #total .total label,
+.products #total .total span {
+    font-size: 14px;
+  }
+  .products #total #clear-cart button {
+    background: transparent;
+  }
+  .products #total a {
+    font-size: 13px;
+    color: #ececec;
+  }
+}
+@media (max-width: 567px) {
+  .section-cart-main .products {
+      border-radius: 0;
+  }
+  .products .product .cart-image {
+    width: 80px !important;
+    height: 100px !important;
+    max-height: 100px !important;
+  }
+  .products .product .cart-details {
+    height: 120px !important;
+  }
+  .products .product .cart-details .product-name label {
+    font-size: 14px !important;
+  }
+}
+.bord {
+  border: 1px solid black;
+}
+
+/*# sourceMappingURL=cart.css.map */

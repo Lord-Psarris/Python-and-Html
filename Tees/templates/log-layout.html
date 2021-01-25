@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>
+		{% block title %}
+			<!-- title -->
+		{% endblock %}
+	</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/shop.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/font-awesome.css') }}">
+</head>
+<body>
+
+<img class="img-b" src="../static/assets/free.jpg" alt="">
+
+<!-- navbar -->
+	<header class="fixed-top">
+		<!-- main nav -->
+			<nav id="nav-bar" class="position-relative pos">
+				<div class="col-12 h-100">
+					<div class="row h-100">
+
+						<div class="col-1 text-center d-flex justify-content-center">
+							<a id="toggle-nav" href="#navigation" class="fa fa-bars my-auto nav-open"></a>
+						</div>
+
+						<div class="col-7 col-sm-8 text-left d-flex justify-content-start">
+							<a href="{{ url_for('index') }}" class="my-auto logo">talking tees</a>
+						</div>
+
+						<div class="col-4 col-sm-3 row p-0 d-flex justify-content-center flex-row">
+                            <div class="col-3 p-2 col-sm-4 justify-content-center d-flex">
+									<a href="{{ url_for('sign_in') }}" class="mini-links fa fa-user my-auto"></a>
+								</div>
+
+							<div class="col-3 p-2 col-sm-4 d-flex justify-content-start text-left">
+								<a href="{{ url_for('cart') }}" class="mini-links fa fa-shopping-cart my-auto"></a>
+								<label class="my-auto" id="cart">{{ cart }}</label>
+							</div>
+							<div class="col-1 p-2 col-sm-4 d-flex justify-content-center pl-3 pl-md-0">
+							</div>
+						</div>
+
+					</div>
+				</div>
+
+			<!-- navigation -->
+				<div id="navigation" class="col-8 col-md-6 position-absolute">
+
+		            <!-- nav floaters -->
+		            <div class="cart_times col-12 p-0 d-flex justify-content-between">
+		                <span class="col-6 p-1 p-md-3 p-lg-5 text-left">
+		                    <a href="/cart">
+		                        <i class="fa fa-shopping-cart">
+		                        </i>
+		                        <span id="cartss" class="my-auto">
+		                        	{{ cart }}
+		                        </span>
+		                    </a>
+		                </span>
+		                <span class="col-6 p-1 p-md-3 p-lg-5 text-right" id="toggle">
+		                    <a>
+		                        <i class="fa fa-times"></i>
+		                    </a>
+		                </span>
+		            </div>
+
+		            <div class="centered mt-5 mt-md-0 d-flex justify-content-center col-12 p-0 text-center">
+		                <span class="col-md-6 col-lg-4 d-flex flex-column text-center">
+			                <a class="py-2 py-md-4 px-md-1" href="/shop"id="shop">shop</a>
+			                <a class="py-2 py-md-4 px-md-1" href="/contact" id="contact">contact</a>
+			                <a class="py-2 py-md-4 px-md-1" href="/about" id="about">about</a>
+		                	<a class="py-2 py-md-4 px-md-1" href="{{ url_for('custom') }}" id="home">customize</a>
+		                </span>
+		            </div>
+
+		            <div class="nav-footer mt-5 mt-md-4 mt-ld-5 d-flex flex-row justify-content-center col-12 p-0 text-center pt-5 pt-md-0 pt-lg-5">
+		                <span class="col-7 col-lg-3 d-flex justify-content-between text-center">
+		                    <a href="https://wa.me/message/YWN3VSAY6NUL01" target="_blank">
+		                        <i class="fa fa-whatsapp"></i>
+		                    </a>
+		                    <a href="gmail" target="_blank">
+		                        <i class="fa fa-google"></i>
+		                    </a>
+		                    <a href="https://instagram.com/p/CFTJSlvDB7U/?igshid=1cf2od1qr969s" target="_blank">
+		                        <i class="fa fa-instagram"></i>
+		                    </a>
+		                </span>
+		            </div>
+		        </div>
+	        </nav>
+		<!-- navigation end -->
+	</header>
+<!-- navbar end -->
+
+
+    {% block main_body %}
+        <!-- main -->
+    {% endblock %}
+
+
+<script src="{{ url_for('static', filename='js/jquery.js') }}"></script>
+<script src="{{ url_for('static', filename='js/popper.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/bootstrap.js') }}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+
+<!-- for index -->
+<script>
+	window.onscroll = function scrollNav() {
+        var nav = document.getElementById("nav-bar");
+        var top = window.scrollY;
+        if (top >= 1) {
+            nav.classList.add('pos');
+        } else {
+            nav.classList.remove('pos');
+        }
+    }
+    $('#toggle-nav').click(function() {
+        var sidenav = document.getElementById("navigation");
+        sidenav.style.transform = "translateX(0%)";
+        $(".opaque").removeClass("d-none")
+    });
+    $('#toggle').click(function() {
+        var sidenav = document.getElementById("navigation");
+        sidenav.style.transform = "translateX(-100%)";
+        $(".opaque").addClass("d-none")
+    });
+</script>
+
+<!-- for reset -->
+<script>
+	$(document).ready(function() {
+	    $("#form1").submit(function(event) {
+	    	event.preventDefault();
+	    	const username = $("#re-username").val();
+			const email = $("#re-email").val();
+			const password = $("#re-pass").val();
+			const password_confirm = $("#re-pass-2").val();
+
+			$.ajax({
+
+				url: "/reset", //url for post
+				method: "post",
+				data: {username : username, email : email, password : password, password_confirm : password_confirm},
+				dataType: "text",
+				success: function(data){
+					if (data == "redirect") {
+						window.location.replace("/login");
+					} else {
+						$("#response").removeClass("d-none");
+						$("#response").html(data);
+					}
+				}
+			});
+	    });
+     });
+</script>
+
+
+<!-- for sign up -->
+<script>
+	$(document).ready(function() {
+	    $("#form-up").submit(function(event) {
+	    	event.preventDefault();
+	    	const username = $("#username").val();
+			const email = $("#email").val();
+			const phone = $("#phone").val();
+			const password = $("#pass").val();
+			const password_confirm = $("#pass2").val();
+
+			$.ajax({
+
+				url: "/sign-up", //url for post
+				method: "post",
+				data: {username : username, email : email, phone : phone, password : password, password_two : password_confirm},
+				dataType: "text",
+				success: function(data){
+					if (data == "redirect") {
+						window.location.replace("/login");
+					} else {
+						$("#response").removeClass("d-none");
+						$("#response").html(data);
+					}
+				}
+			});
+	    });
+     });
+</script>
+
+<!-- for login -->
+<script>
+	$(document).ready(function() {
+	    $("#form-in").submit(function(event) {
+	    	event.preventDefault();
+	    	const username = $("#username").val();
+        	const password = $("#pass").val();
+
+			$.ajax({
+
+				url: "/log", //url for post
+				method: "post",
+				data: {username : username, password : password},
+				dataType: "text",
+				success: function(data){
+					if (data == "redirect") {
+						window.location.replace("/");
+					} else {
+						$("#response").removeClass("d-none");
+						$("#response").html(data);
+					}
+				}
+			});
+	    });
+     });
+</script>
+</body>
+</html>
