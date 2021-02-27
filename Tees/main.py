@@ -1,10 +1,31 @@
 from flask import Flask, render_template, request, session, redirect, url_for, escape
 import sqlite3 as sql
-import os
 
+# to do
+"""
+make the products go to more than one page
+add search feature
+resize photos
+cryptography
+check how red looks
+"""
 
 app = Flask(__name__)
 app.secret_key = 'The_talking_tees'
+
+
+class PageResult:
+    def __init__(self, data, page=1, number=20):
+        self.__dict__ = dict(zip(['data', 'page', 'number'], [data, page, number]))
+        self.full_listing = [self.data[i:i + number] for i in range(0, len(self.data), number)]
+
+    def __iter__(self):
+        for i in self.full_listing[self.page - 1]:
+            yield i
+
+    def __repr__(self):  # used for page linking
+        return "/shop/{}".format(self.page + 1)  # view the next page
+
 
 
 @app.route("/sign-up", methods=["POST", "GET"])
@@ -148,7 +169,8 @@ def shop():
     products = cursor.fetchall()
 
     try:
-        return render_template("shop.html", name=session["user_name"], yum=session["yum"], products=products, cart=session["cart_no"])
+        return render_template("shop.html", name=session["user_name"], yum=session["yum"], products=products,
+                               cart=session["cart_no"])
     except KeyError:
         yum = False
         cart_ = 0
@@ -440,7 +462,8 @@ def order():
 def custom():
     try:
         if session["cart_no"]:
-            return render_template("custom.html", name=session["user_name"], yum=session["yum"], cart=session["cart_no"])
+            return render_template("custom.html", name=session["user_name"], yum=session["yum"],
+                                   cart=session["cart_no"])
         else:
             cart = 0
             return render_template("custom.html", name=session["user_name"], yum=session["yum"], cart=cart)
@@ -495,10 +518,8 @@ def returns():
 def terms():
     return render_template("terms.html")
 
+
 # needs to be done
-
-
-
 
 
 # connection.close()

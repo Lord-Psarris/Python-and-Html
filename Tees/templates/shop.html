@@ -61,7 +61,7 @@
 						<div class="grid-item py-1 my-2 my-md-1 {{ row[4] }}">
 							<div class="item position-relative" style="max-height: 400px; height: 300px;">
 								<div id="addtocart" class="w-100">
-									<img src="{{ row[3] }}" class="mx-auto w-50 d-table" style="max-height: 150px; height: 150px;">
+									<img src="{{ row[3] }}" class="mx-auto d-table" style="max-height: 150px; height: 150px;">
 									<h6 class="text-dark text-center w-100 mt-1">{{ row[1] }}</h6>
 									<p class="text-dark mx-auto text-center">₦{{ row[2] }}</p>
 									<button value="{{ row[0] }}" class="adding d-table btn btn-danger text-center w-50 justify-content-center mx-auto" style="border-radius:0;">Add to cart</button>
@@ -74,6 +74,8 @@
 					{% endfor %}
 
 				</div>
+				<br>
+				
 			</section>
 		<!-- shop section 2 end -->
 

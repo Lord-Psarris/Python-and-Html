@@ -32,6 +32,11 @@ body {
   color: #000;
   font-size: 12px;
 }
+
+#addtocart img {
+  width: 50% !important;
+}
+
 #addtocart h6 {
   font-weight: 600;
 }
@@ -152,6 +157,10 @@ body {
 }
 
 @media (max-width: 768px) {
+  #addtocart img {
+    width: 75% !important;
+  }
+
   #shop-section-1 {
     width: 100%;
     height: 73vh;

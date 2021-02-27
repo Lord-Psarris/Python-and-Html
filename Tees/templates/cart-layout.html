@@ -22,7 +22,10 @@
 					<div class="row h-100">
 
 						<div class="col-1 text-center d-flex justify-content-center">
-							<a id="toggle-nav" href="#navigation" class="fa fa-bars my-auto nav-open"></a>
+							<a id="toggle-nav" class="fa fa-bars my-auto mini-links"></a>
+		                    <a class="my-auto mini-links d-none" id="toggle">
+		                        <i class="fa fa-times"></i>
+		                    </a>
 						</div>
 
 						<div class="col-7 col-sm-8 text-left d-flex justify-content-start">
@@ -58,36 +61,18 @@
 				</div>
 
 			<!-- navigation -->
-				<div id="navigation" class="col-8 col-md-6 position-absolute">
+				<div id="navigation" class="col-12 col-md-6 position-relative">
 
-		            <!-- nav floaters -->
-		            <div class="cart_times col-12 p-0 d-flex justify-content-between">
-		                <span class="col-6 p-1 p-md-3 p-lg-5 text-left">
-		                    <a href="/cart">
-		                        <i class="fa fa-shopping-cart">
-		                        </i>
-		                        <span id="cartss" class="my-auto">
-		                        	{{ cart }}
-		                        </span>
-		                    </a>
-		                </span>
-		                <span class="col-6 p-1 p-md-3 p-lg-5 text-right" id="toggle">
-		                    <a>
-		                        <i class="fa fa-times"></i>
-		                    </a>
+		            <div class="centered d-flex row w-100 p-0">
+		                <span class="col-md-6 col-lg-4 mx-auto my-auto d-flex flex-column text-center">
+			                <a href="/shop"id="shop">shop</a>
+			                <a href="/contact" id="contact">contact</a>
+			                <a href="/about" id="about">about</a>
+		                	<a href="{{ url_for('custom') }}" id="home">customize</a>
 		                </span>
 		            </div>
 
-		            <div class="centered mt-5 mt-md-0 d-flex justify-content-center col-12 p-0 text-center">
-		                <span class="col-md-6 col-lg-4 d-flex flex-column text-center">
-			                <a class="py-2 py-md-4 px-md-1" href="/shop"id="shop">shop</a>
-			                <a class="py-2 py-md-4 px-md-1" href="/contact" id="contact">contact</a>
-			                <a class="py-2 py-md-4 px-md-1" href="/about" id="about">about</a>
-		                	<a class="py-2 py-md-4 px-md-1" href="{{ url_for('custom') }}" id="home">customize</a>
-		                </span>
-		            </div>
-
-		            <div class="nav-footer mt-5 mt-md-4 mt-ld-5 d-flex flex-row justify-content-center col-12 p-0 text-center pt-5 pt-md-0 pt-lg-5">
+		            <div class="nav-footer d-flex justify-content-center w-100">
 		                <span class="col-7 col-lg-3 d-flex justify-content-between text-center">
 		                    <a href="https://wa.me/message/YWN3VSAY6NUL01" target="_blank">
 		                        <i class="fa fa-whatsapp"></i>
@@ -258,15 +243,24 @@
         }
     }
     $('#toggle-nav').click(function() {
-        var sidenav = document.getElementById("navigation");
-        sidenav.style.transform = "translateX(0%)";
-        $(".opaque").removeClass("d-none")
-    });
-    $('#toggle').click(function() {
-        var sidenav = document.getElementById("navigation");
-        sidenav.style.transform = "translateX(-100%)";
-        $(".opaque").addClass("d-none")
-    });
+	    var sidenav = document.getElementById("navigation");
+	    sidenav.style.transform = "translateX(0%)";
+	    $('#toggle').fadeIn('fast');
+	    $('#toggle-nav').fadeOut('slow', function() {
+	    	$("#toggle").removeClass("d-none");
+	    });
+
+	});
+
+	$('#toggle').click(function() {
+	    var sidenav = document.getElementById("navigation");
+	    sidenav.style.transform = "translateX(-100%)";
+	    
+	    $("#toggle").addClass("d-none");
+	    $('#toggle').fadeOut('fast', function() {
+	    	$('#toggle-nav').fadeIn('slow');
+	    });
+	});
 </script>
 </body>
 </html>

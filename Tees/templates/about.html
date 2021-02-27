@@ -6,13 +6,13 @@
 
 {% block main_body %}
 	<main>
-		<section id="firstFixed" class="fix about-section-1">
+		<section class="about-section-1">
 
 			<div>
-				<img src="../static/assets/free.jpg">
 				<p class="text-center text-light">
 					Your one stop fashion store
 				</p>
+				<img src="../static/assets/free.jpg">
 			</div>
 		</section>
 
@@ -20,7 +20,7 @@
 		<section class="about-section-main">
 
 			<!-- inner section -->
-			<section class="l position-relative w-100 p-0 m-0">
+			<section class="position-relative">
 				<!-- hype grid -->
 				<div class="row col-12 bord-up mx-auto about-grid p-0">
 					<div class="col-12 col-md-4 text-left container p-md-3 p-3">
@@ -80,9 +80,9 @@
 					</div>
 				</div>
 
-				<div class="about-contact position-relative mt-5 row text-center">
+				<div class="about-contact position-relative mt-5 row text-center w-100 m-0">
 					<img src="../static/assets/work 3.jpg">
-					<div class="about-contact-inner">
+					<div class="about-contact-inner w-100 ">
 						<h1 class="w-100 text-light">Lets make the best tees together!</h1>
 						<a href="{{ url_for('contact') }}" class="btn btn-danger py-lg-2 px-lg-5 px-2 px-md-4 mt-1">Contact us</a>
 					</div>

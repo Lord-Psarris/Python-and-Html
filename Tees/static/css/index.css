@@ -68,14 +68,13 @@ button:focus, button.focus,
 
 #nav-bar a:hover {
   text-decoration: none;
-  color: #ececec;
 }
 
 #nav-bar .nav-open {
   font-size: 18px;
 }
 #nav-bar .logo {
-  font-size: 28px;
+  font-size: 38px;
   font-family: "Prata", serif;
 }
 #nav-bar label {
@@ -88,7 +87,8 @@ button:focus, button.focus,
   padding: 0;
 }
 #nav-bar .mini-links {
-  font-size: 20px;
+  font-size: 22px;
+  cursor: pointer;
 }
 
 /*#2f435e, #44566c, #ececec, #4b5e65, #201b22.*/
@@ -96,58 +96,49 @@ button:focus, button.focus,
 #navigation {
   top: 0;
   left: 0;
-  height: 100vh;
+  height: 90vh;
   transform: translateX(-100%);
   transition: 0.5s ease-in-out;
-}
-
-#nav-bar.pos #navigation {
-  background-color: #ececec;
-}
-
-.cart_times a {
-  font-size: 26px;
-  cursor: pointer;
-}
-
-.cart_times a span {
-  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  background-color: #ececec !important;
 }
 
 .centered a {
-  margin: 5% 0;
-  font-family: 'lato', serif;
-  font-weight: 700;
-  font-size: 27px;
-  color: inherit;
+  margin: 15px 0;
+  font-family: 'lato', sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+  color: #2f435e !important;
   text-decoration: none;
   transition: 0.3s ease-in-out;
   text-transform: uppercase;
+  padding: 15px;
 }
 
 .centered a:hover {
-    background-color: #4b5e65;
+    background-color: #201b22;
     color: #ececec !important;
-    font-size: 29px;
 }
 
-#nav-bar.pos #navigation .centered a:hover {
-    background-color: #4b5e65;
-    color: #ececec !important;
-    font-size: 29px;
+.nav-footer span a {
+  color: #2f435e !important;
+  height: auto !important;
 }
 
 #section-1 {
   transition: 1s ease-in-out;
   height: 105vh;
-  background: #4b5e65 !important;
+  background: #000103 !important;
   background-size: cover;
 }
 #section-1 img {
   object-fit: cover;
   object-position: center;
   pointer-events: none;
-  opacity: 0.8;
+  opacity: 0.5;
 }
 #section-1 div {
   bottom: 30%;
@@ -172,7 +163,6 @@ button:focus, button.focus,
 
 #section-2 .centered-text span {
   font-size: 2rem;
-  font-weight: 400;
   font-family: "Prata", serif;
   color: #000000;
 }
@@ -183,16 +173,23 @@ button:focus, button.focus,
   background-repeat: no-repeat;
   background-position: center;
 }
-#section-2 .j-1 {
-  object-fit: cover;
-  background-image: url("../assets/work 1.jpg") !important;
-}
-#section-2 .j-2 {
-  background-image: url("../assets/work 2.jpg") !important;
-}
+#section-2 .j-1, 
+#section-2 .j-2,
 #section-2 .j-3 {
-  background-image: url("../assets/work 3.jpg") !important;
+  background: #000;
 }
+#section-2 .j-1 img,
+#section-2 .j-2 img,
+#section-2 .j-3 img {
+  object-fit: cover;
+  opacity: 0.85;
+}
+
+#section-2 .j-2 {
+  border-left: 1px solid #fff;
+  border-right: 1px solid #fff;
+}
+
 #section-2 .lil {
   position: absolute;
   top: 50%;
@@ -330,7 +327,6 @@ button:focus, button.focus,
 /* footer */
 #footer #newsletter p:nth-child(1) {
   font-family: "Lato", sans-serif;
-  font-weight: 400;
   font-size: 18px;
   color: #201b22;
 }
@@ -361,7 +357,6 @@ button:focus, button.focus,
   font-size: 20px;
   font-family: "Lato", sans-serif;
   text-transform: uppercase;
-  font-weight: 400;
   color: #201b22;
 }
 .actual-foot-pc a {
@@ -390,7 +385,6 @@ button:focus, button.focus,
 }
 .footer .foot-a {
   font-size: 1.2em;
-  font-weight: 400;
   font-family: "Prata", serif;
   text-decoration: none;
 }
@@ -440,7 +434,6 @@ button:focus, button.focus,
 
   .centered-text span {
     font-size: 2rem;
-    font-weight: 400;
     font-family: "Prata", serif;
   }
 }
@@ -458,10 +451,6 @@ button:focus, button.focus,
   #nav-bar .nav-open {
     font-size: 18px;
   }
-  #nav-bar .logo {
-    font-size: 24px;
-    font-family: "Prata", serif;
-  }
   #nav-bar label {
     font-size: 12px;
     padding: 8px 0 0 2px;
@@ -471,22 +460,20 @@ button:focus, button.focus,
     padding: 0;
   }
   #nav-bar .mini-links {
-    font-size: 18px;
+    font-size: 20px;
   }
   #nav-bar .search span {
     font-size: 14px;
   }
 
   .centered a {
-    font-size: 22px;
-    margin: 9% 0 7% 0;
+    font-size: 16px;
   }
 
   #section-1 img {
     object-fit: cover;
     object-position: center;
     pointer-events: none;
-    opacity: 0.8;
   }
   #section-1 div {
     bottom: 30%;
@@ -520,7 +507,7 @@ button:focus, button.focus,
   .centered a:hover {
     background-color: #4b5e65;
     color: #ececec !important;
-    font-size: 22px;
+    font-size: 17px;
    }
 
   .lil {
@@ -534,7 +521,6 @@ button:focus, button.focus,
   }
 
   .j-1 {
-    background-image: url();
     grid-row: 1/2;
   }
 
@@ -548,7 +534,6 @@ button:focus, button.focus,
 
   .centered-text span {
     font-size: 1.3rem;
-    font-weight: 400;
     font-family: "Prata", serif;
   }
 }
@@ -557,7 +542,7 @@ button:focus, button.focus,
     font-size: 16px;
   }
   #nav-bar .logo {
-    font-size: 22px;
+    font-size: 27px !important;
     font-family: "Prata", serif;
   }
   #nav-bar label {
@@ -569,27 +554,17 @@ button:focus, button.focus,
     padding: 0;
   }
   #nav-bar .mini-links {
-    font-size: 16px;
+    font-size: 18px;
   }
   #nav-bar .search span {
     font-size: 14px;
     margin-left: 5px;
   }
-
-  .cart_times a {
-    font-size: 20px;
-    cursor: pointer;
-  }
-
-  .centered a {
-    font-size: 18px;
-  }
-
   #section-1 img {
     object-fit: cover;
     object-position: center;
     pointer-events: none;
-    opacity: 0.7 !important;
+    opacity: 0.5 !important;
   }
   #section-1 div {
     bottom: 20% !important;

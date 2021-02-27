@@ -1,27 +1,22 @@
 body {
-  overflow-x: hidden;
+  width: 100vw !important;
 }
 .about-section-1 {
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
   width: 100%;
-  z-index: -100;
+  height: 100vh;
   background-color: black;
 }
 
 .about-section-1 img {
   width: 100%;
-  z-index: -10;
-  height: 100vh;
+  height: 100%;
   object-fit: cover;
   opacity: 0.7;
 }
 
 .about-contact img {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   position: absolute;
   opacity: 0.7;
   object-fit: cover;
@@ -41,14 +36,10 @@ body {
   font-size: 110px;
   font-family: "Prata", serif;
   z-index: 10;
-  width: 1000px;
 }
 
 .about-section-main {
   background-color: #f5f4f2;
-  top: 100%;
-  left: 0;
-  right: -10;
   width: 100%;
 }
 
@@ -138,7 +129,6 @@ body {
 
 .about-contact-inner {
   height: 100vh;
-  width: 100%;
   background-color: black;
 }
 

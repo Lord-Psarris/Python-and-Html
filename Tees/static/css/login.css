@@ -17,14 +17,14 @@ body {
 }
 
 #nav-bar {
-  transition: 1s ease-in-out;
+  transition: 0.5s ease-in-out;
   height: 15vh;
   background-color: transparent;
 }
 
 #nav-bar.pos {
   transition: 1s ease-in-out;
-  height: 10vh;
+  height: 12vh;
   background-color: #ececec;
 }
 
@@ -55,14 +55,13 @@ body {
 
 #nav-bar a:hover {
   text-decoration: none;
-  color: #ececec;
 }
 
 #nav-bar .nav-open {
   font-size: 18px;
 }
 #nav-bar .logo {
-  font-size: 28px;
+  font-size: 38px;
   font-family: "Prata", serif;
 }
 #nav-bar label {
@@ -75,7 +74,8 @@ body {
   padding: 0;
 }
 #nav-bar .mini-links {
-  font-size: 20px;
+  font-size: 22px;
+  cursor: pointer;
 }
 
 /*#2f435e, #44566c, #ececec, #4b5e65, #201b22.*/
@@ -83,39 +83,36 @@ body {
 #navigation {
   top: 0;
   left: 0;
-  height: 100vh;
+  height: 90vh;
   transform: translateX(-100%);
   transition: 0.5s ease-in-out;
-}
-
-#nav-bar.pos #navigation {
-  background-color: #ececec;
-}
-
-.cart_times a {
-  font-size: 26px;
-  cursor: pointer;
-}
-
-.cart_times a span {
-  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  background-color: #ececec !important;
 }
 
 .centered a {
-  margin: 5% 0;
-  font-family: 'lato', serif;
-  font-weight: 700;
-  font-size: 27px;
-  color: inherit;
+  margin: 15px 0;
+  font-family: 'lato', sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+  color: #2f435e !important;
   text-decoration: none;
   transition: 0.3s ease-in-out;
   text-transform: uppercase;
+  padding: 15px;
 }
 
 .centered a:hover {
-    background-color: #4b5e65;
+    background-color: #201b22;
     color: #ececec !important;
-    font-size: 29px;
+}
+
+.nav-footer span a {
+  color: #2f435e !important;
+  height: auto !important;
 }
 
 .space-div {
