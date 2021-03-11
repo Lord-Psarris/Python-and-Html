@@ -91,12 +91,26 @@ button:focus, button.focus,
   cursor: pointer;
 }
 
+#nav-bar #nav_toggle {
+    cursor: pointer;
+    width: 25px;
+}
+
+#nav-bar span svg {
+    width: 24px;
+    height: 24px;
+}
+
+#nav-bar.pos svg line {
+    stroke: #2f435e !important;
+}
+
 /*#2f435e, #44566c, #ececec, #4b5e65, #201b22.*/
 
 #navigation {
   top: 0;
   left: 0;
-  height: 90vh;
+  height: 85vh;
   transform: translateX(-100%);
   transition: 0.5s ease-in-out;
   display: flex;
@@ -104,6 +118,10 @@ button:focus, button.focus,
   justify-content: space-around;
   flex-direction: column;
   background-color: #ececec !important;
+}
+
+.pos #navigation {
+  height: 90vh;
 }
 
 .centered a {
@@ -542,8 +560,9 @@ button:focus, button.focus,
     font-size: 16px;
   }
   #nav-bar .logo {
-    font-size: 27px !important;
+    font-size: 24px !important;
     font-family: "Prata", serif;
+    padding-left: 7px;
   }
   #nav-bar label {
     font-size: 11px !important;
@@ -555,10 +574,6 @@ button:focus, button.focus,
   }
   #nav-bar .mini-links {
     font-size: 18px;
-  }
-  #nav-bar .search span {
-    font-size: 14px;
-    margin-left: 5px;
   }
   #section-1 img {
     object-fit: cover;
@@ -684,6 +699,10 @@ button:focus, button.focus,
   background: rgba(0, 0, 0, 0.7);
   z-index: 100;
   pointer-events: auto;
+}
+
+.bord {
+  border: 1px solid black;
 }
 
 /*# sourceMappingURL=index.css.map */

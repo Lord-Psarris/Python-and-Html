@@ -1,17 +1,20 @@
-from flask import Flask, render_template, request, session, redirect, url_for, escape
+from flask import Flask, render_template, request, session, redirect, url_for
 import sqlite3 as sql
+import random
+import logging
+from DB import make_tables
 
 # to do
 """
-make the products go to more than one page
 add search feature
-resize photos
 cryptography
 check how red looks
 """
 
 app = Flask(__name__)
 app.secret_key = 'The_talking_tees'
+
+make_tables()
 
 
 @app.route("/sign-up", methods=["POST", "GET"])
@@ -161,6 +164,42 @@ def shop():
         yum = False
         cart_ = 0
         return render_template("shop.html", yum=yum, products=products, cart=cart_)
+
+
+@app.route("/products/<ids>")
+def product_page(ids):
+    connection = sql.connect('TeeDb')
+    cursor = connection.cursor()
+
+    # for product collecting
+    collect = f"SELECT * FROM products where id={ids};"
+    cursor.execute(collect)
+    products = list(cursor.fetchone())
+    print(products)
+    print(products[4])
+    lists = []
+    collect = f"SELECT * FROM products where product_category='{products[4]}';"
+    cursor.execute(collect)
+    lists = cursor.fetchall()
+    x = random.randint(1, len(lists))
+    others = []
+    y = []
+    for i in range(x):
+        x = random.choice(lists)
+        if x not in y:
+            print(x)
+            others.append(x)
+            y.append(x)
+
+    print(others)
+
+    try:
+        return render_template("product.html", name=session["user_name"], yum=session["yum"], row=products,
+                               cart=session["cart_no"], others=others)
+    except KeyError:
+        yum = False
+        cart_ = 0
+        return render_template("product.html", yum=yum, row=products, cart=cart_, others=others)
 
 
 @app.route("/details", methods=["POST"])

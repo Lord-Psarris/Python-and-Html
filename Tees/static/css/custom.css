@@ -9,7 +9,7 @@
   font-weight: 700;
 }
 
-#section-pick div {
+#section-pick .div {
   position: absolute;
   top: 50%;
   left: 50%;

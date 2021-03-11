@@ -45,9 +45,13 @@ body {
   font-size: 12px;
 }
 
+#addtocart a, #addtocart a:hover {
+  text-decoration: none;
+  color: initial;
+}
+
 .alert {
   font-family: "Lato", sans-serif;
-  color: #000;
   position: fixed !important;
   top: 20%;
   left: 50%;
@@ -82,68 +86,6 @@ body {
   text-decoration: none;
   color: #2f435e;
   background-color: transparent;
-}
-
-#details {
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1035;
-}
-#details .details #close-details {
-  top: 0%;
-  right: 5%;
-  font-size: 20px;
-  color: #FFFEFB;
-  font-family: "Lato", sans-serif;
-  cursor: pointer;
-  z-index: 10;
-}
-#details .details .detail-img img {
-  object-fit: cover;
-  object-position: center;
-  border: 1px solid #FFFEFB;
-  z-index: 10;
-  max-height: 70vh;
-}
-#details .details .detail-main .main-colors label {
-  font-size: 15px;
-  font-family: "Lato", sans-serif;
-  color: #FFFEFB !important;
-  font-weight: 300;
-  z-index: 100;
-}
-#details .details .detail-main .main-colors .colors * {
-  border-radius: 50%;
-  z-index: 100;
-}
-#details .details .detail-main .main-colors .colors .color-red {
-  background-color: #ff0f1f;
-}
-#details .details .detail-main .main-colors .colors .color-blue {
-  background-color: #180cf7;
-}
-#details .details .detail-main .main-colors .colors .color-white {
-  background-color: #ffffff;
-}
-#details .details .detail-main .main-colors .colors .color-grey {
-  background-color: darkgrey;
-}
-#details .details .detail-main .main-colors .colors .color-black {
-  background-color: #000;
-}
-#details .details .detail-main .description div, #details .details .detail-main .description label {
-  color: #FFFEFB;
-  font-size: 16px;
-  font-family: "Lato", sans-serif;
-  z-index: 1035;
-}
-#details .details .detail-main .description p {
-  color: #FFFEFB;
-  font-size: 18px;
-  font-family: "Lato", sans-serif;
-  font-weight: 300;
-  z-index: 10;
 }
 
 .item {

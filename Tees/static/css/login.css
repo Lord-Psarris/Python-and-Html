@@ -78,12 +78,26 @@ body {
   cursor: pointer;
 }
 
+#nav-bar #nav_toggle {
+    cursor: pointer;
+    width: 25px;
+}
+
+#nav-bar span svg {
+    width: 24px;
+    height: 24px;
+}
+
+#nav-bar.pos svg line {
+    stroke: #2f435e !important;
+}
+
 /*#2f435e, #44566c, #ececec, #4b5e65, #201b22.*/
 
 #navigation {
   top: 0;
   left: 0;
-  height: 90vh;
+  height: 85vh;
   transform: translateX(-100%);
   transition: 0.5s ease-in-out;
   display: flex;
@@ -91,6 +105,10 @@ body {
   justify-content: space-around;
   flex-direction: column;
   background-color: #ececec !important;
+}
+
+.pos #navigation {
+  height: 90vh;
 }
 
 .centered a {
@@ -193,6 +211,36 @@ body {
     font-size: 12px;
   }
 
+  @media (max-width: 767px) {
+  #pre-nav {
+    display: none !important;
+  }
+  #pre-nav span {
+    font-size: 12px;
+  }
+
+  #nav-bar.pos {
+    height: 10vh;
+  }
+  #nav-bar .nav-open {
+    font-size: 18px;
+  }
+  #nav-bar label {
+    font-size: 12px;
+    padding: 8px 0 0 2px;
+  }
+  #nav-bar label:nth-child(2) {
+    font-size: 14px;
+    padding: 0;
+  }
+  #nav-bar .mini-links {
+    font-size: 20px;
+  }
+  #nav-bar .search span {
+    font-size: 14px;
+  }
+}
+
   @media (max-width: 576px) {
     .main {
       border-radius: 0;
@@ -208,8 +256,9 @@ body {
     font-size: 16px;
   }
   #nav-bar .logo {
-    font-size: 22px;
+    font-size: 24px !important;
     font-family: "Prata", serif;
+    padding-left: 7px;
   }
   #nav-bar label {
     font-size: 11px !important;
@@ -220,19 +269,10 @@ body {
     padding: 0;
   }
   #nav-bar .mini-links {
-    font-size: 16px;
+    font-size: 18px;
   }
   #nav-bar .search span {
     font-size: 14px;
     margin-left: 5px;
-  }
-
-  .cart_times a {
-    font-size: 20px;
-    cursor: pointer;
-  }
-
-  .centered a {
-    font-size: 20px;
   }
   }

@@ -17,72 +17,89 @@
 <img class="img-b" src="../static/assets/free.jpg" alt="">
 
 <!-- navbar -->
-	<header class="fixed-top">
-		<!-- main nav -->
-			<nav id="nav-bar" class="position-relative pos">
-				<div class="col-12 h-100">
-					<div class="row h-100">
+<header class="fixed-top">
+    <!-- main nav -->
+	    <nav id="nav-bar" class="position-relative pos">
+	        <div class="col-12 h-100">
+	            <div class="row h-100">
 
-						<div class="col-1 text-center d-flex justify-content-center">
-							<a id="toggle-nav" class="fa fa-bars my-auto mini-links"></a>
-		                    <a class="my-auto mini-links d-none" id="toggle">
-		                        <i class="fa fa-times"></i>
-		                    </a>
-						</div>
+	                <div class="col-1 text-center d-flex justify-content-center">
+	                    <a id="toggle-nav" class="my-auto col-1">
+	                    	<span id="nav_toggle">
+				                <svg viewBox="0 0 348 247" fill="none" xmlns="http://www.w3.org/2000/svg">
+				                <line x1="33" y1="54" x2="331" y2="54" stroke="#2f435e" stroke-width="34" stroke-linecap="round"/>
+				                <line x1="33" y1="131.5" x2="271.069" y2="131.5" stroke="#2f435e" stroke-width="34" stroke-linecap="round"/>
+				                <line x1="33" y1="209" x2="203.051" y2="209" stroke="#2f435e" stroke-width="34" stroke-linecap="round"/>
+				                </svg>
+				            </span>
+	                    </a>
+	                    <a class="my-auto col-1 d-none" id="toggle">
+	                        <span id="nav_toggle">
+				                <svg viewBox="0 0 348 247" fill="none" xmlns="http://www.w3.org/2000/svg">
+				                <line x1="33" y1="54" x2="331" y2="54" stroke="#2f435e" stroke-width="34" stroke-linecap="round"/>
+				                <line x1="33" y1="131.5" x2="271.069" y2="131.5" stroke="#2f435e" stroke-width="34" stroke-linecap="round"/>
+				                <line x1="33" y1="209" x2="203.051" y2="209" stroke="#2f435e" stroke-width="34" stroke-linecap="round"/>
+				                </svg>
+				            </span>
+	                    </a>
+	                </div>
 
-						<div class="col-7 col-sm-8 text-left d-flex justify-content-start">
-							<a href="{{ url_for('index') }}" class="my-auto logo">talking tees</a>
-						</div>
+	                <div class="col-7 col-sm-8 text-left d-flex justify-content-start">
+	                    <a href="{{ url_for('index') }}" class="my-auto logo">talking tees</a>
+	                </div>
 
-						<div class="col-4 col-sm-3 row p-0 d-flex justify-content-center flex-row">
-							<div class="col-3 p-2 col-sm-4 justify-content-center d-none d-md-flex">
-								<a href="{{ url_for('sign_in') }}" class="mini-links fa fa-user my-auto"></a>
-							</div>
+	                <div class="col-4 col-sm-3 row p-0 d-flex justify-content-center flex-row">
+	                    <div class="col-3 p-2 col-sm-4 justify-content-center d-none d-md-flex">
+	                        <a href="{{ url_for('sign_in') }}" class="mini-links fa fa-user my-auto"></a>
+	                    </div>
 
-                            <div class="col-3 p-2 col-sm-4 justify-content-center d-flex d-md-none">
-									<a href="{{ url_for('sign_in') }}" class="mini-links fa fa-user my-auto"></a>
-								</div>
+	                    <div class="col-3 p-2 col-sm-3 justify-content-center d-flex d-md-none">
+	                        <a href="{{ url_for('sign_in') }}" class="mini-links fa fa-user my-auto"></a>
+	                    </div>
 
-							<div class="col-3 p-2 col-sm-4 d-flex justify-content-start text-left">
-								<a href="{{ url_for('cart') }}" class="mini-links fa fa-shopping-cart my-auto"></a>
-								<label class="my-auto" id="cart">{{ cart }}</label>
-							</div>
-							<div class="col-1 p-2 col-sm-4 d-flex justify-content-center pl-3 pl-md-0">
-							</div>
-						</div>
+	                    <div class="col-3 mx-1 p-2 col-sm-3 d-flex justify-content-start text-left">
+	                        <a href="{{ url_for('cart') }}" class="mini-links fa fa-shopping-cart my-auto"></a>
+	                        <label class="my-auto" id="cart">{{ cart }}</label>
+	                    </div>
+	                    <div class="col-3 p-0 p-md-2 col-sm-3 d-flex justify-content-start pl-md-0">
+	                    	<a class="my-auto col-md-1">
+	                    		<i class="fa fa-search"></i>
+	                    	</a>
+	                    </div>
+	                </div>
 
-					</div>
-				</div>
+	            </div>
+	        </div>
 
-			<!-- navigation -->
-				<div id="navigation" class="col-12 col-md-6 position-relative">
+	        <!-- navigation -->
+	        <div id="navigation" class="col-12 col-md-6 d-flex">
 
-		            <div class="centered d-flex row w-100 p-0">
-		                <span class="col-md-6 col-lg-4 mx-auto my-auto d-flex flex-column text-center">
-			                <a href="/shop"id="shop">shop</a>
-			                <a href="/contact" id="contact">contact</a>
-			                <a href="/about" id="about">about</a>
-		                	<a href="{{ url_for('custom') }}" id="home">customize</a>
-		                </span>
-		            </div>
+	            <div class="centered d-flex row w-100 p-0">
+			                <span class="col-md-6 col-lg-4 mx-auto my-auto d-flex flex-column text-center">
+				                <a href="/shop" id="shop">shop</a>
+				                <a href="/contact" id="contact">contact</a>
+				                <a href="/about" id="about">about</a>
+			                	<a href="{{ url_for('custom') }}" id="home">customize</a>
+			                </span>
+	            </div>
 
-		            <div class="nav-footer d-flex justify-content-center w-100">
-		                <span class="col-7 col-lg-3 d-flex justify-content-between text-center">
-		                    <a href="https://wa.me/message/YWN3VSAY6NUL01" target="_blank">
-		                        <i class="fa fa-whatsapp"></i>
-		                    </a>
-		                    <a href="gmail" target="_blank">
-		                        <i class="fa fa-google"></i>
-		                    </a>
-		                    <a href="https://instagram.com/p/CFTJSlvDB7U/?igshid=1cf2od1qr969s" target="_blank">
-		                        <i class="fa fa-instagram"></i>
-		                    </a>
-		                </span>
-		            </div>
-		        </div>
-	        </nav>
-		<!-- navigation end -->
-	</header>
+	            <div class="nav-footer d-flex justify-content-center w-100 mb-5 pb-3">
+			                <span class="col-7 col-lg-3 d-flex justify-content-between text-center">
+			                    <a href="https://wa.me/message/YWN3VSAY6NUL01" target="_blank">
+			                        <i class="fa fa-whatsapp"></i>
+			                    </a>
+			                    <a href="gmail" target="_blank">
+			                        <i class="fa fa-google"></i>
+			                    </a>
+			                    <a href="https://instagram.com/p/CFTJSlvDB7U/?igshid=1cf2od1qr969s" target="_blank">
+			                        <i class="fa fa-instagram"></i>
+			                    </a>
+			                </span>
+	            </div>
+	        </div>
+	    </nav>
+    <!-- navigation end -->
+</header>
 <!-- navbar end -->
 
 

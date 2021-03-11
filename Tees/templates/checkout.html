@@ -1,220 +1,112 @@
-{% extends "layout.html" %}
+{% extends "layout.html" %} {% block title %} Checkout - The Talking Tees {% endblock %} {% block main_body %}
+<main>
+    <section class="section-cart-1 py-md-5 pb-1 d-flex" style="min-height: 30vh;">
+        <h1 class="text-center mx-auto mt-auto mt-lg-0 my-lg-auto justify-content-center">Checkout</h1>
+    </section>
+    <section class="checkout-section-form col-12 d-table d-md-block m-md-0 m-auto row">
+        <!-- form -->
+        <form id="order" class="d-md-flex d-block">
+            <!-- total of prod -->
+            <div class="p-lg-4 p-0 w-100 mt-3 mt-md-0 mx-auto mx-md-0 d-table d-md-inline-block col-md-5 col-12">
+                <div class="row col-12 mx-auto">
+                    <div class="totals mx-auto text-center justify-content-center w-100 col-md-12 mt-3">
+                        <p class="fa-2x text-md-left w-100">Order details</p>
+                        <hr class="bg-dark w-100">
+                        <div class="col-12 row mx-auto d-table total-list">
+                            <!-- product list -->
 
-{% block title %}
-	Checkout - The Talking Tees
-{% endblock %}
-
-{% block main_body %}
-	<main>
-		<section class="section-pre w-100"></section>
-
-        <!-- checkout header section -->
-        <section class="section-cart-1 py-md-5 pb-1">
-            <h1 class="text-center justify-content-center">Checkout</h1>
-        </section>
-        <section class="checkout-section-form col-12 d-table d-md-block m-md-0 m-auto row">
-            <!-- form -->
-            <form action="/checkout/order" method="POST" id="order" class="d-md-flex d-block">
-                <div class="p-md-4 p-0 w-100 mx-auto mx-md-0 d-table d-md-inline-block col-md-7 col-12 ">
-                    <!-- form stufff -->
-                    <!-- names -->
-                    <div class="row p-0 col-12 mx-auto mx-md-0 d-table">
-                        <div class="d-flex p-0 m-0">
-                            <div class="col-6  p-1">
-                                <label class="my-1 pl-1 label text-left">
-                                    First Name
-                                </label>
-                                <input value="{{ first }}" type="text" name="firstName" class="m-0 w-100 col-12" required>
+                            {% for row in products %}
+                            <div class="list p-md-1 p-0 my-auto d-flex justify-content-between">
+                                <p class="my-md-auto my-0 text-md-left text-center" id="{{ row[0] }}">
+                                    {{ row[1] }}
+                                    <small class="font-weight-bold">&nbsp;(x{{ row[9] }})</small>
+                                </p>
+                                <p class="my-md-auto my-0 text-left"> ₦{{ row[2] }}
+                                </p>
                             </div>
-                            <div class="col-6  p-1">
-                                <label class="my-1 pl-1 label text-left">
-                                    Last Name
-                                </label>
-                                <input type="text" name="lastName" class="m-0 w-100 col-12" required>
+                            {% endfor %}
+
+                            <hr class="m-0">
+                            <!-- subtotals -->
+                            <!-- subtotals -->
+                            <!-- subtotals -->
+
+                            <div class="list p-md-1 p-0 my-auto d-flex justify-content-between">
+                                <p class="my-auto text-md-left font-weight-bold text-center">
+                                    SUBTOTAL:
+                                </p>
+                                <p class="my-auto text-left font-weight-bold">
+                                    ₦{{ subtotal }}
+                                </p>
+                            </div>
+                            <hr class="m-0">
+
+                            <!-- shipping -->
+                            <!-- shipping -->
+                            <!-- shipping -->
+
+                            <div class="list p-md-1 p-0 my-auto d-flex justify-content-between">
+                                <p class="my-auto text-md-left font-weight-bold text-center">
+                                    SHIPPING:
+                                </p>
+                                <p class="my-auto text-left font-weight-bold" id="shipping">₦2000</p>
+                            </div>
+                            <hr class="m-0">
+
+                            <div class="list p-1 my-auto d-flex justify-content-between">
+                                <p class="my-auto text-md-left font-weight-bold text-center">
+                                    TOTAL:
+                                </p>
+                                <p class="my-auto text-left font-weight-bold">
+                                    ₦{{ total }}
+                                </p>
+                            </div>
+                            <div class="col-12 container-fluid">
+                                <button type="submit" class="total-list black w-100 text-center">Order Now</button>
                             </div>
                         </div>
-                    </div>
-                    <!-- address -->
-                    <div class="row p-1 mt-3 mt-md-4 col-12 mx-auto mx-md-0 d-table">
-                        <label class="my-1 ml-1 label text-left">
-                            Address
-                        </label>
-                        <input type="text" name="address" class="m-0 w-100 col-12" required>
-                    </div>
-                    <!-- state -->
-                    <div class="row p-1 mt-3 mt-md-4 col-12 mx-auto mx-md-0 d-table">
-                        <label class="my-1 pl-1 label text-left">
-                            State
-                        </label>
-                        <select name="state" id="state" required>
-                            <option disabled selected>--Select State--</option>
-                            <option value="Abia">Abia</option>
-                            <option value="Adamawa">Adamawa</option>
-                            <option value="Akwa Ibom">Akwa Ibom</option>
-                            <option value="Anambra">Anambra</option>
-                            <option value="Bauchi">Bauchi</option>
-                            <option value="Bayelsa">Bayelsa</option>
-                            <option value="Benue">Benue</option>
-                            <option value="Borno">Borno</option>
-                            <option value="Cross Rive">Cross River</option>
-                            <option value="Delta">Delta</option>
-                            <option value="Ebonyi">Ebonyi</option>
-                            <option value="Edo">Edo</option>
-                            <option value="Ekiti">Ekiti</option>
-                            <option value="Enugu">Enugu</option>
-                            <option value="FCT">Federal Capital Territory</option>
-                            <option value="Gombe">Gombe</option>
-                            <option value="Imo">Imo</option>
-                            <option value="Jigawa">Jigawa</option>
-                            <option value="Kaduna">Kaduna</option>
-                            <option value="Kano">Kano</option>
-                            <option value="Katsina">Katsina</option>
-                            <option value="Kebbi">Kebbi</option>
-                            <option value="Kogi">Kogi</option>
-                            <option value="Kwara">Kwara</option>
-                            <option value="Lagos">Lagos</option>
-                            <option value="Nasarawa">Nasarawa</option>
-                            <option value="Niger">Niger</option>
-                            <option value="Ogun">Ogun</option>
-                            <option value="Ondo">Ondo</option>
-                            <option value="Osun">Osun</option>
-                            <option value="Oyo">Oyo</option>
-                            <option value="Plateau">Plateau</option>
-                            <option value="Rivers">Rivers</option>
-                            <option value="Sokoto">Sokoto</option>
-                            <option value="Taraba">Taraba</option>
-                            <option value="Yobe">Yobe</option>
-                            <option value="Zamfara">Zamfara</option>
-                        </select>
-                    </div>
-                    <!-- town or city -->
-                    <div class="row p-1 mt-3 mt-md-4 col-12 mx-auto mx-md-0 d-table">
-                        <label class="my-1 ml-1 label text-left">
-                            Town/City
-                        </label>
-                        <input type="text" name="town" class="m-0 w-100 col-12" required>
-                    </div>
-                    <!-- phone -->
-                    <div class="row p-1 mt-3 mt-md-4 col-12 mx-auto mx-md-0 d-table">
-                        <label class="my-1 ml-1 label text-left">
-                            Phone Number
-                        </label>
-                        <input value="{{ number }}" type="tel" name="number" class="m-0 w-100 col-12" required>
-                    </div>
-                    <!-- email -->
-                    <div class="row p-1 mt-3 mt-md-4 col-12 mx-auto mx-md-0 d-table">
-                        <label class="my-1 ml-1 label text-left">
-                            E-mail Address
-                        </label>
-                        <input value="{{ mail }}" type="email" name="email" class="m-0 w-100 col-12" required>
-                    </div>
-                    <!-- email -->
-                    <div class="row p-1 mt-3 mt-md-4 col-12 mx-auto mx-md-0 d-table">
-                        <label class="my-1 ml-1 label text-left">
-                            Order Notes(optional)
-                        </label>
-                        <input type="text" name="orderNote"
-                            placeholder="special notes about your location e.g my house is hidden..."
-                            class="text-left m-0 w-100 t-note col-12">
+                        <div class="p-3"></div>
                     </div>
                 </div>
+            </div>
 
-                <!-- total of prod -->
-                <div class="p-lg-4 p-0 w-100 mt-3 mt-md-0 mx-auto mx-md-0 d-table d-md-inline-block col-md-5 col-12">
-                    <div class="row col-12 mx-auto">
-                        <div class="totals mx-auto text-center justify-content-center w-100 col-md-12 mt-3">
-                            <p class="fa-2x text-md-left w-100">Order details</p>
-                            <hr class="bg-dark w-100">
-                            <div class="col-12 row mx-auto d-table total-list">
-                                <!-- product list -->
-
-                                {% for row in products %}
-                                <div class="list p-md-1 p-0 my-auto d-flex justify-content-between">
-							        <p class="my-md-auto my-0 text-md-left text-center" id="{{ row[0] }}">
-							        {{ row[1] }}
-							            <small class="font-weight-bold">&nbsp;(x{{ row[9] }})</small>
-							        </p>
-							        <p class="my-md-auto my-0 text-left"> ₦{{ row[2] }}
-							        </p>
-							    </div>
-                                {% endfor %}
-
-                                <hr class="m-0">
-                                <!-- subtotals -->
-                                <!-- subtotals -->
-                                <!-- subtotals -->
-
-                                <div class="list p-md-1 p-0 my-auto d-flex justify-content-between">
-                                    <p class="my-auto text-md-left font-weight-bold text-center">
-                                        SUBTOTAL:
-                                    </p>
-                                    <p class="my-auto text-left font-weight-bold">
-                                        ₦{{ subtotal }}
-                                    </p>
-                                </div>
-                                <hr class="m-0">
-
-                                <!-- shipping -->
-                                <!-- shipping -->
-                                <!-- shipping -->
-
-                                <div class="list p-md-1 p-0 my-auto d-flex justify-content-between">
-                                    <p class="my-auto text-md-left font-weight-bold text-center">
-                                        SHIPPING:
-                                    </p>
-                                    <p class="my-auto text-left font-weight-bold" id="shipping">₦2000</p>
-                                </div>
-                                <hr class="m-0">
-
-                                <div class="list p-1 my-auto d-flex justify-content-between">
-                                    <p class="my-auto text-md-left font-weight-bold text-center">
-                                        TOTAL:
-                                    </p>
-                                    <p class="my-auto text-left font-weight-bold">
-                                        ₦{{ total }}
-                                    </p>
-                                </div>
-
-                                <!-- payment method -->
-                                <!-- payment method -->
-                                <!-- payment method -->
-                                <div class="iframe-pay p-1 d-block w-100">
-                                    <div class="my-1 d-flex">
-                                        <input class="d-block my-auto" type="radio" id="online" name="online"
-                                            value="Pay online">
-
-                                        <label class="label d-block mx-2 my-auto" for="online">Pay
-                                            Online</label>
-                                    </div>
-
-                                    <div class="my-1 d-flex">
-                                        <input class="d-block my-auto" type="radio" id="delivery" name="online"
-                                            value="Pay on delivery">
-
-                                        <label class="label d-block mx-2 my-auto" for="delivery">Pay on
-                                            delivery</label>
-                                    </div>
-                                </div>
-
-                                <!-- iframe paypal -->
-                                <!-- iframe paypal -->
-                                <!-- iframe paypal -->
-                                <div></div>
-
-
-                                <!-- place order button -->
-                                <!-- place order button -->
-                                <!-- place order button -->
-                                <div class="col-12 container-fluid">
-                                    <button type="submit" class="total-list black w-100 text-center">Order Now</button>
-                                </div>
-                            </div>
-                            <div class="p-3"></div>
-                        </div>
-                    </div>
+            <div class="p-lg-4 p-0 w-100 mt-3 mt-md-0 bord mx-auto mx-md-auto col-md-5 col-12">
+                <div class="col-10 mx-auto bord">
+                    <div id="paypal-button-container"></div>
                 </div>
-            </form>
-        </section>
-        <div class="p-5"></div>
-	</main>
+            </div>
+        </form>
+    </section>
+    <div class="p-5"></div>
+</main>
+{% endblock %} {% block scripts %}
+<!-- Include the PayPal JavaScript SDK -->
+<script src="https://www.paypal.com/sdk/js?client-id=sb&currency=USD"></script>
+
+<script>
+    // Render the PayPal button into #paypal-button-container
+    paypal.Buttons({
+
+        // Set up the transaction
+        createOrder: function(data, actions) {
+            return actions.order.create({
+                purchase_units: [{
+                    amount: {
+                        value: '88.44'
+                    }
+                }]
+            });
+        },
+
+        // Finalize the transaction
+        onApprove: function(data, actions) {
+            return actions.order.capture().then(function(details) {
+                // Show a success message to the buyer
+                alert('Transaction completed by ' + details.payer.name.given_name + '!');
+            });
+        }
+
+
+    }).render('#paypal-button-container');
+</script>
 {% endblock %}

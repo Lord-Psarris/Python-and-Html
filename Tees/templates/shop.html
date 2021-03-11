@@ -65,7 +65,9 @@
 									<h6 class="text-dark text-center w-100 mt-1">{{ row[1] }}</h6>
 									<p class="text-dark mx-auto text-center">₦{{ row[2] }}</p>
 									<button value="{{ row[0] }}" class="adding d-table btn btn-danger text-center w-50 justify-content-center mx-auto" style="border-radius:0;">Add to cart</button>
-									<button value="{{ row[0] }}" class="detailed mt-2 d-table btn btn-danger text-center w-50 justify-content-center mx-auto" style="border-radius:0;">Details</button>
+									<a href="/products/{{ row[0] }}" style="text-decoration: none;color: initial;">
+									<button value="{{ row[0] }}" class="mt-2 d-table btn btn-danger text-center w-50 justify-content-center mx-auto" style="border-radius:0;">Details</button>
+									</a>
 									<input type="hidden" id="id" name="{{ row[0] }}" value="{{ row[0] }}">
 									   <hr class="d-none d-md-block" />
 								</div>
@@ -78,57 +80,5 @@
 				
 			</section>
 		<!-- shop section 2 end -->
-
-		<!-- details -->
-			<div class="col-11 col-md-11 col-lg-10 row container position-fixed d-none" id="details">
-				<div class="col-12 d-flex flex-md-row flex-column details position-relative">
-					<div id="close-details" class="position-absolute">
-						<i class="fa fa-times"></i>
-					</div>
-					<div class="col-md-6 col-12 d-md-flex mt-1">
-						<div class="detail-img my-auto mx-auto">
-							<img id="details-image" class="w-100 h-100">
-						</div>
-					</div>
-					<div class="col-md-6 col-12 m-0">
-						<div class="detail-main mt-md-3 mt-1">
-							<div class="main-colors">
-								<label class="text-left">Available colors</label>
-								<div class="colors d-flex flex-row justify-content-start">
-									<div class="p-md-3 mx-2 color-red">
-									</div>
-									<div class="p-md-3 mx-2 color-blue">
-									</div>
-									<div class="p-md-3 mx-2 color-white">
-									</div>
-									<div class="p-md-3 mx-2 color-grey">
-									</div>
-									<div class="p-md-3 mx-2 color-black">
-									</div>
-								</div>
-							</div>
-							<div class="description d-flex flex-column justify-content-center mt-md-4 mt-1">
-								<label class="w-100 text-center mt-1 mt-md-0 details-price">
-									#2000
-								</label>
-								<p class="w-100 mt-0 mt-md-1 text-center details-description">
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-									tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-									quis nostrud exercitation ullamc
-								</p>
-								<div class="d-flex justify-content-center mt-md-2">
-									sizes:
-									<label class="mx-md-3 mx-2 text-center">XXL</label>
-									<label class="mx-md-3 mx-2 text-center">XL</label>
-									<label class="mx-md-3 mx-2 text-center">L</label>
-									<label class="mx-md-3 mx-2 text-center">M</label>
-									<label class="mx-md-3 mx-2 text-center">S</label>
-								</div>
-							</div>
-						</div> 
-					</div>
-				</div>
-			</div>
-		<!-- details end -->
 	</main>
 {% endblock %}
