@@ -1,7 +1,6 @@
 from flask import Flask, render_template, request, session, redirect, url_for
 import sqlite3 as sql
 import random
-import logging
 from DB import make_tables
 
 # to do
